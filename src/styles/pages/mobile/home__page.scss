@@ -1,0 +1,121 @@
+#home__page{
+  @include body;
+  .all__svg{
+    @include hiddenViewport;
+    width: 100%;
+    .circlesWhite{
+      z-index: -10;
+      stroke-dasharray: 100 ;
+      position: fixed;
+      margin-left: auto;
+      margin-right: auto;
+      left: -20vw;
+      height: 100vh;
+      width: 140vw;
+      transform-origin: center;
+      // transform: scale( 1.5 , 1.5 );
+      animation: rotation 15s infinite;
+    }
+  }
+  .container__sphere{
+    @include hiddenViewport;
+    .sphere{
+      position: fixed;
+      display: block;
+      margin: auto;
+      z-index: -1;
+      top: 37vh;
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      left: 0;
+      right: 0;
+      -webkit-animation: rotation 4s infinite linear , sphereGoToCenter 10s ;
+      @include sphere ;
+    }
+  }
+  .text__of__presentation{
+    height: 100vh;
+    color: white;
+    font-size: 40px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family: 'Lemon/Milk';
+    h1{
+      padding-top: 20vh;
+    }
+    h2{
+      padding-bottom: 30vh;
+    }
+  }
+  .projects{
+    height: 100vh;
+    perspective: 2000px;
+    h3.title__project{
+      position: relative;
+      font-family: 'Lemon/Milk' ;
+      font-size: 62px;
+      letter-spacing: 3px;
+      top: 10px;   
+      width: 80%;
+      margin: auto;
+      
+      // opacity: 0.5;
+      // transform: translateX(150vw);
+      
+      @media screen and ( min-width : 400px) {
+        letter-spacing: 10px;
+      }
+      
+      transition: transform 3s , opacity 3s ;
+      &.transtision{
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+    .project{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Avenir LT Std' ;
+      font-weight: 900;
+      padding-top: 10%;
+      justify-content: center;
+      height: 80%;
+
+      .illustration__of__project img{
+        width: 40vh;
+        max-width: 280px;
+      }
+      
+      h3{
+        font-size: 38px;
+        &.armani{
+          color: $armani;
+          animation: blinkArmani 3.5s infinite alternate;
+        }&.so_comptoir{
+          color: jaune;
+          animation: blinkso_comptoir 3.5s infinite alternate;
+        }&.space_invaders{
+          animation: blinkInvaders 3.5s infinite alternate;
+        }
+      }
+      
+      h4.type__of__project{
+        font-size: 19px;
+        letter-spacing: 4px;
+      }
+    }
+  }
+  .sroll__barre{
+    width: 100vw;
+    background-color: white;
+    height: 10px;
+    position: fixed;
+    transition-duration: 100ms;
+    bottom: 0px;
+  } 
+}

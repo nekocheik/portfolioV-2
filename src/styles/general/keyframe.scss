@@ -1,0 +1,23 @@
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes sphereGoToCenter {
+  from{
+    top: -150px;
+  }
+  to {
+    top: 200px;
+  }
+}
+
+@keyframes rotationCircle {
+  100% {
+    transform: rotate( 1turn );
+  }
+}

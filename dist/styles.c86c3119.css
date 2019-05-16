@@ -1,0 +1,489 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@keyframes sphereGoToCenter {
+  from {
+    top: -150px;
+    top: -9.375rem;
+  }
+  to {
+    top: 200px;
+    top: 12.5rem;
+  }
+}
+@keyframes rotationCircle {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+.cursor {
+  position: absolute;
+  z-index: 10;
+}
+
+.Menu__burger {
+  height: 0px;
+  height: 0;
+  width: 0px;
+  width: 0;
+  position: fixed;
+  bottom: 130px;
+  bottom: 8.125rem;
+  right: 70px;
+  right: 4.375rem;
+  overflow: visible;
+}
+.Menu__burger .croi {
+  height: 30px;
+  height: 1.875rem;
+  display: block;
+  margin: auto;
+  transform: translateY(50px);
+  transform: translateY(3.125rem);
+  z-index: -2;
+  fill: black;
+  opacity: 0;
+  transition: opacity 0.6s, transform 1s;
+}
+.Menu__burger .croi.active {
+  transform: initial;
+  opacity: initial;
+  z-index: 10;
+}
+.Menu__burger p {
+  transition: font-size 0.3s, width 0.7s 0.4s;
+  z-index: 2;
+  font-size: 1px;
+  font-size: 0.0625rem;
+  color: black;
+  border: 1px solid white;
+  border: 0.0625rem solid white;
+  margin: 2px;
+  margin: 0.125rem;
+  padding-left: 45px;
+  padding-left: 2.8125rem;
+  padding-top: 6px;
+  padding-top: 0.375rem;
+  background-color: rgba(0, 0, 0, 0.589);
+  width: 0vw;
+}
+.Menu__burger p.active {
+  pointer-events: initial;
+  transition: all 0.5s 0.4s, font-size 0.5s 0.3s, width 0.5s;
+  font-size: initial;
+  color: white;
+  border: 1px solid white;
+  border: 0.0625rem solid white;
+  margin: 5px;
+  margin: 0.3125rem;
+  width: 92vw;
+  text-align: center;
+  padding: 5px;
+  padding: 0.3125rem;
+}
+
+@media screen and (min-width: 800px) {
+  .Menu__burger {
+    bottom: initial;
+    top: 28px;
+    top: 1.75rem;
+    flex-direction: row;
+    right: 5vw;
+    justify-content: space-between;
+    width: 357px;
+    width: 22.3125rem;
+  }
+  .Menu__burger p {
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-family: Avenir;
+    color: white;
+    border: none;
+    background-color: initial;
+    width: initial;
+    padding: initial;
+  }
+  .Menu__burger p.active {
+    font-size: 18px;
+    font-size: 1.125rem;
+    border: none;
+    margin: initial;
+    width: initial;
+    text-align: initial;
+    padding: initial;
+  }
+  .Menu__burger .croi {
+    display: none;
+  }
+  .Menu__burger .croi.active {
+    display: none;
+  }
+  .Menu__burger.move {
+    opacity: initial;
+  }
+}
+
+#home__page {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: white;
+  overscroll-behavior: none;
+}
+#home__page .all__svg {
+  height: 0px;
+  height: 0;
+  width: 100%;
+}
+#home__page .all__svg .circlesWhite {
+  z-index: -10;
+  stroke-dasharray: 100;
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  left: -20vw;
+  height: 100vh;
+  width: 140vw;
+  transform-origin: center;
+  animation: rotation 15s infinite;
+}
+#home__page .container__sphere {
+  height: 0px;
+  height: 0;
+}
+#home__page .container__sphere .sphere {
+  position: fixed;
+  display: block;
+  margin: auto;
+  z-index: -1;
+  top: 37vh;
+  height: 200px;
+  height: 12.5rem;
+  width: 200px;
+  width: 12.5rem;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  -webkit-animation: rotation 4s infinite linear, sphereGoToCenter 10s;
+  box-shadow: inset 0 0 50px #fff, inset 20px 0 80px #f0f, inset -20px 0 80px #0ff, inset 20px 0 300px #f0f, inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px rgba(0, 255, 255, 0.438);
+  box-shadow: inset 0 0 3.125rem #fff, inset 1.25rem 0 5rem #f0f, inset -1.25rem 0 5rem #0ff, inset 1.25rem 0 18.75rem #f0f, inset -1.25rem 0 18.75rem #0ff, 0 0 3.125rem #fff, -0.625rem 0 5rem #f0f, 0.625rem 0 5rem rgba(0, 255, 255, 0.438);
+}
+#home__page .text__of__presentation {
+  height: 100vh;
+  color: white;
+  font-size: 40px;
+  font-size: 2.5rem;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-family: "Lemon/Milk";
+}
+#home__page .text__of__presentation h1 {
+  padding-top: 20vh;
+}
+#home__page .text__of__presentation h2 {
+  padding-bottom: 30vh;
+}
+#home__page .projects {
+  height: 100vh;
+  perspective: 2000px;
+  perspective: 125rem;
+}
+#home__page .projects h3.title__project {
+  position: relative;
+  font-family: "Lemon/Milk";
+  font-size: 62px;
+  font-size: 3.875rem;
+  letter-spacing: 3px;
+  letter-spacing: 0.1875rem;
+  top: 10px;
+  top: 0.625rem;
+  width: 80%;
+  margin: auto;
+  transition: transform 3s, opacity 3s;
+}
+@media screen and (min-width: 400px) {
+  #home__page .projects h3.title__project {
+    letter-spacing: 10px;
+    letter-spacing: 0.625rem;
+  }
+}
+#home__page .projects h3.title__project.transtision {
+  opacity: 1;
+  transform: translateX(0px);
+  transform: translateX(0);
+}
+#home__page .projects .project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Avenir LT Std";
+  font-weight: 900;
+  padding-top: 10%;
+  justify-content: center;
+  height: 80%;
+}
+#home__page .projects .project .illustration__of__project img {
+  width: 40vh;
+  max-width: 280px;
+  max-width: 17.5rem;
+}
+#home__page .projects .project h3 {
+  font-size: 38px;
+  font-size: 2.375rem;
+}
+#home__page .projects .project h3.armani {
+  color: #0757AA;
+  animation: blinkArmani 3.5s infinite alternate;
+}
+#home__page .projects .project h3.so_comptoir {
+  color: jaune;
+  animation: blinkso_comptoir 3.5s infinite alternate;
+}
+#home__page .projects .project h3.space_invaders {
+  animation: blinkInvaders 3.5s infinite alternate;
+}
+#home__page .projects .project h4.type__of__project {
+  font-size: 19px;
+  font-size: 1.1875rem;
+  letter-spacing: 4px;
+  letter-spacing: 0.25rem;
+}
+#home__page .sroll__barre {
+  width: 100vw;
+  background-color: white;
+  height: 10px;
+  height: 0.625rem;
+  position: fixed;
+  transition-duration: 100ms;
+  bottom: 0px;
+  bottom: 0;
+}
+
+@media screen and (min-width: 800px) {
+  #home__page {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    overscroll-behavior: none;
+  }
+  #home__page .all__svg {
+    height: 0px;
+    height: 0;
+  }
+  #home__page .all__svg .circlesWhite {
+    left: 0vw;
+    right: 0px;
+    right: 0;
+    top: -300px;
+    top: -18.75rem;
+    height: 170vh;
+    max-height: 1371.88px;
+    max-height: 85.7425rem;
+    width: 80vw;
+    max-width: 1092.8px;
+    max-width: 68.3rem;
+    transform-origin: center;
+    animation: rotation 15s infinite;
+  }
+  #home__page .container__sphere {
+    height: 0px;
+    height: 0;
+  }
+  #home__page .container__sphere .sphere {
+    top: 30vh;
+    height: 250px;
+    height: 15.625rem;
+    width: 250px;
+    width: 15.625rem;
+  }
+}
+@media screen and (min-width: 800px) and (min-height: 900px) {
+  #home__page .container__sphere .sphere {
+    top: 22vh;
+  }
+}
+@media screen and (min-width: 800px) {
+  #home__page .text__of__presentation {
+    letter-spacing: 5px;
+    letter-spacing: 0.3125rem;
+  }
+}
+@media screen and (min-width: 800px) {
+  #home__page .projects h3.title__project {
+    font-size: 94px;
+    font-size: 5.875rem;
+    top: 10px;
+    top: 0.625rem;
+    letter-spacing: 17px;
+    letter-spacing: 1.0625rem;
+  }
+  #home__page .projects .project {
+    height: 40%;
+  }
+}
+@media screen and (min-width: 800px) and (min-height: 900px) {
+  #home__page .projects .project {
+    height: 50%;
+  }
+}
+@media screen and (min-width: 800px) {
+  #home__page .projects .project .illustration__of__project img {
+    width: 40vh;
+    max-width: 780px;
+    max-width: 48.75rem;
+  }
+}
+@media screen and (min-width: 800px) {
+  #home__page .projects .project h3 {
+    font-size: 90px;
+    font-size: 5.625rem;
+  }
+}
+@media screen and (min-width: 800px) {
+  #home__page .projects .project h4.type__of__project {
+    font-size: 28px;
+    font-size: 1.75rem;
+    letter-spacing: 0px;
+    letter-spacing: 0;
+  }
+}
+@font-face {
+  font-family: "Avenir LT Std";
+  src: url("/AvenirLTStd-BookOblique.2aa40d26.woff2") format("woff2"), url("/AvenirLTStd-BookOblique.b6b230ab.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Avenir LT Std";
+  src: url("/AvenirLTStd-BlackOblique.33f92660.woff2") format("woff2"), url("/AvenirLTStd-BlackOblique.b83f1a85.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Avenir LT Std";
+  src: url("/AvenirLTStd-MediumOblique.f2ada582.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Avenir LT Std";
+  src: url("/AvenirLTStd-Book.14066f26.woff2") format("woff2"), url("/AvenirLTStd-Book.561e474f.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir LT Std";
+  src: url("/AvenirLTStd-LightOblique.726d8cd2.woff2") format("woff2"), url("/AvenirLTStd-LightOblique.c6dcb3fd.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Avenir LT Std";
+  src: url("/AvenirLTStd-Roman.72c19c07.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir LT Std";
+  src: url("/AvenirLTStd-Heavy.3c5d69b1.woff2") format("woff2"), url("/AvenirLTStd-Heavy.0af4a684.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir LT Std";
+  src: url("/AvenirLTStd-Medium.7a3391b4.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir LT Std";
+  src: url("/AvenirLTStd-Light.63f2ec45.woff2") format("woff2"), url("/AvenirLTStd-Light.ac2af951.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir LT Std";
+  src: url("/AvenirLTStd-Black.cefa54cf.woff2") format("woff2"), url("/AvenirLTStd-Black.d9e3b08f.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir LT Std";
+  src: url("/AvenirLTStd-Oblique.e8231fd6.woff2") format("woff2"), url("/AvenirLTStd-Oblique.a5044faf.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Avenir LT Std";
+  src: url("/AvenirLTStd-HeavyOblique.ef703afa.woff2") format("woff2"), url("/AvenirLTStd-HeavyOblique.404234c4.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Lemon/Milk";
+  src: url("/LemonMilkbold.66d9e799.woff2") format("woff2"), url("/LemonMilkbold.a9c84fa6.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lemon/Milk";
+  src: url("/LemonMilklight.c5b0a3d8.woff2") format("woff2"), url("/LemonMilklight.b987b550.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lemon/Milk";
+  src: url("/LemonMilkbolditalic.7d03a03c.woff2") format("woff2"), url("/LemonMilkbolditalic.3dd2179e.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Lemon/Milk";
+  src: url("/LemonMilkitalic.edc6277c.woff2") format("woff2"), url("/LemonMilkitalic.cbce27d0.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Lemon/Milk";
+  src: url("/LemonMilk.a1650ff7.woff2") format("woff2"), url("/LemonMilk.16e08b7b.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lemon/Milk";
+  src: url("/LemonMilklightitalic.d305a6a1.woff2") format("woff2"), url("/LemonMilklightitalic.e2c7ecff.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+
+/*# sourceMappingURL=/styles.c86c3119.css.map */

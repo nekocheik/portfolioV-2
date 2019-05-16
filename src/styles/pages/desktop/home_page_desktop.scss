@@ -1,0 +1,63 @@
+#home__page{
+  @media screen and (min-width : 800px) {
+    @include body;
+    .all__svg{
+      @include hiddenViewport;
+      .circlesWhite{
+        left: 0vw;
+        right: 0px;
+        top: -300px;
+        height: 170vh;
+        max-height: 1371.880px;
+        width: 80vw;
+        max-width: 1092.800px;
+        transform-origin: center;
+        // transform: scale( 1.5 , 1.5 );
+        animation: rotation 15s infinite;
+      }
+    }
+    .container__sphere{
+      @include hiddenViewport;
+      .sphere{
+        top: 30vh;
+        height: 250px;
+        width: 250px;
+        @media screen and (min-height : 900px) {
+          top: 22vh;
+        }
+      }
+    }
+    .text__of__presentation{
+
+      letter-spacing: 5px;
+    }
+    .projects{
+      h3.title__project{
+        font-size: 94px;
+        top: 10px;   
+        letter-spacing: 17px;
+      }
+      .project{
+        height: 40%;
+        @media screen and (min-height : 900px) {
+        height: 50%;
+      }
+        
+        .illustration__of__project img{
+          width: 40vh;
+          max-width: 780px;
+        }
+        h3{
+          font-size: 90px;
+        } 
+        h4.type__of__project{
+          font-size: 28px;
+          letter-spacing: 0px;
+        }
+      }
+    }
+  }
+  .sroll__barre{
+    // no modification
+  }
+}

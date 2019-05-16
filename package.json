@@ -1,0 +1,17 @@
+{
+  "name": "portfoliov-2-master",
+  "version": "1.0.0",
+  "description": "my portfolio",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^1.12.3",
+    "postcss-pxtorem": "^4.0.1",
+    "sass": "^1.20.1"
+  }
+}

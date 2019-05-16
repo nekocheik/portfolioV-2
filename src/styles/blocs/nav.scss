@@ -1,0 +1,93 @@
+////// menu burger mobile //////
+
+
+.Menu__burger{
+  @include hiddenViewport;
+  width: 0px;
+  
+  position: fixed;
+
+  bottom: 130px;
+  right: 70px;
+
+  overflow: visible;
+  
+  .croi{
+    height: 30px;
+    display: block;
+    margin: auto;
+    transform: translateY(50px);
+    z-index: -2;
+    fill: black;
+    opacity: 0 ;
+    transition: opacity 0.6s , transform 1s ;
+    &.active{
+      transform: initial;
+      opacity: initial;
+      z-index: 10;
+    }
+  }
+
+  p{
+    // pointer-events: none;
+    transition: font-size 0.3s , width 0.7s 0.4s  ;
+    z-index: 2;
+    font-size: 1px;
+    color: black;
+    border: 1px solid white;
+    margin: 2px;
+    padding-left: 45px;
+    padding-top: 6px;
+    background-color: rgba(0, 0, 0, 0.589);
+    width: 0vw;
+    &.active{
+      pointer-events: initial;
+      transition: all 0.5s 0.4s ,font-size 0.5s 0.3s , width 0.5s  ;
+      font-size: initial;
+      color: white;
+      border: 1px solid white;
+      margin: 5px;
+      width: 92vw;
+      text-align: center;
+      padding: 5px;
+    }
+  }
+}
+
+////// nav barre //////
+
+.Menu__burger{
+  @media screen and ( min-width : 800px ) {
+    bottom : initial ;
+    top: 28px;
+    flex-direction: row;
+    right: 5vw;
+    justify-content: space-between;
+    width: 357px;
+    p{
+      font-size: 18px;
+      font-family: Avenir;
+      color: white;
+      border: none;
+      background-color: initial;
+      width: initial;
+      padding: initial;
+      &.active{
+        font-size: 18px;
+        border: none ;
+        margin: initial;
+        width: initial ;
+        text-align: initial;
+        padding: initial;
+      }
+    }.croi{
+        display: none;
+        &.active{
+          display : none;
+        }
+    }
+    &.move{
+      opacity: initial;
+    }
+  }
+}
