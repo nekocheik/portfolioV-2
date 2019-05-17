@@ -1,0 +1,101 @@
+    
+    #about{
+      
+      main{
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+      }
+      .part__about{
+        margin-top: 20%;
+        margin-left: 10%;
+      }
+      h1{
+        font-family: 'Lemon/Milk';
+        font-size: 42px;
+      }h2{
+        font-family: 'Avenir LT Std';
+        margin-top: 5vh;
+        font-size: 32px;
+        font-weight: 900;
+      }
+      .about__text{
+        max-width: 564px;
+        margin-top: 5vh;
+        font-family: 'Avenir LT Std';
+        font-size: 18px;
+        line-height: 45px;
+      }
+      .link{
+        margin-top: 20px;
+        width: 188px;
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Lemon/Milk';
+        font-size: 34px;
+        align-items: center;
+        margin: auto;
+      }
+      .portrait__of__cheik{
+        display: none
+      }
+      button{
+        margin: 30px auto auto auto;
+        display: block;
+        @include button;
+      }
+      
+      @media screen and ( min-width : 800px ) {
+        .circle__svg{
+          @include hiddenViewport ;
+          position: absolute;
+          top: 0%;
+          right: -4%;
+          .circlesWhite{
+            height: 800px;
+          }
+          @media screen and ( min-height : 1000px ) {
+            right: -1%;
+            top: 5%;
+        }
+      }
+        .part__about{
+          margin-top: initial;
+          margin-left: initial;
+          margin: auto;
+          padding-right: 25vw;
+        }
+        h1{
+          font-size: 94px;
+          letter-spacing: 20px;
+        }.portrait{
+          @include hiddenViewport;
+          position: absolute;
+          top: 75%;
+          right: 5%;
+        }
+        .portrait__of__cheik{
+          display: inline;
+          position: relative;
+          margin-left: -300px;
+          margin-top: -400px;
+        }
+        .container__sphere{
+          @include hiddenViewport ;
+          position: absolute;
+          top: 20%;
+          right: 8%;
+        }
+        .sphere{
+          @include sphere ;
+          border-radius: 100%;
+          width: 450px;
+          height: 450px;
+        }
+        .contact{
+          margin-top: 10vh;
+          max-width: 564px;
+        }
+      }
+    }

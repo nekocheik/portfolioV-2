@@ -1,5 +1,5 @@
 #home__page{
-  @media screen and (min-width : 800px) {
+  @media screen and ( min-width : 800px) {
     @include body;
     .all__svg{
       @include hiddenViewport;
@@ -12,7 +12,6 @@
         width: 80vw;
         max-width: 1092.800px;
         transform-origin: center;
-        // transform: scale( 1.5 , 1.5 );
         animation: rotation 15s infinite;
       }
     }

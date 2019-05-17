@@ -1,43 +1,45 @@
 #in__the__project{
-  .the__project{
-    strong{
-      font-weight: 900;
-    }
-    .title__of__project{
-      margin-top: -10vh;;
-      animation: enterLeft 4s ;
-      h1{
-        font-size: 90px;
-        font-family: 'Avenir LT Std' ;
+  @media screen and ( min-width : 800px) {
+    .the__project{
+      strong{
         font-weight: 900;
-        animation:  3.5s blinkArmani infinite alternate 2s ;
-      }h2{
-        font-size: 20px;
-        font-family: 'Avenir LT Std';
-        padding-bottom: 20px;
-        strong{
-        letter-spacing: 2px;
+      }
+      .title__of__project{
+        margin-top: -10vh;;
+        animation: enterLeft 4s ;
+        h1{
+          font-size: 90px;
+          font-family: 'Avenir LT Std' ;
+          font-weight: 900;
+          animation:  3.5s blinkArmani infinite alternate 2s ;
+        }h2{
+          font-size: 20px;
+          font-family: 'Avenir LT Std';
+          padding-bottom: 20px;
+          strong{
+            letter-spacing: 2px;
+          }
         }
       }
-    }
-    .description{
-      padding-top: 2%;
-      max-width: 80vw;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      font-weight: 300 ;
-      line-height: 40px;
-      .description__text{
-        max-width: 604px;
-        padding-bottom: 20%;
-      }
-      p{
-        font-size: 20px;
-      }
-      .image{
-        padding-top: 0%;
-        img{
-          margin-bottom: 60px
+      .description{
+        padding-top: 2%;
+        max-width: 80vw;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        font-weight: 300 ;
+        line-height: 40px;
+        .description__text{
+          max-width: 604px;
+          padding-bottom: 20%;
+        }
+        p{
+          font-size: 20px;
+        }
+        .image{
+          padding-top: 0%;
+          img{
+            margin-bottom: 60px
+          }
         }
       }
     }

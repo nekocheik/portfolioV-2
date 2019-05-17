@@ -108,3 +108,22 @@
     transform: rotate( 1turn );
   }
 }
+
+
+
+@keyframes retractation {
+  from{
+    display : none;
+    transform: scale( 1 , 1 )  rotate( 0turn ) ;
+  }
+  50%{
+    transform: scale(0.5 , 0.5)  rotate( 0.5turn ) ;
+  }70%{
+
+    transform: scale( 1 , 1 ) rotate( 1turn );
+  }
+  100%{
+
+    transform: scale( 1 , 1 ) rotate( 1turn );
+  }
+}

@@ -273,7 +273,12 @@ function () {
 
         _this.element.style.left = "".concat(_this.x, "px");
         _this.element.style.top = "".concat(_this.y, "px");
-        _this.element.style.transform = "skew(".concat(_this.scaleX * 1.5, "deg , ").concat(_this.scaleY * 1.5, "deg)");
+        TweenLite.to(_this.element, 10, {
+          css: {
+            transform: "skew(".concat(_this.scaleX * 1.5, "deg , ").concat(_this.scaleY * 1.5, "deg)")
+          },
+          ease: Power2.easeOut
+        });
       });
     }
   }, {
@@ -304,7 +309,7 @@ function () {
       }, 25);
       setInterval(function () {
         _this2.element.style.transform = "skew(".concat(_this2.scaleX, "deg , ").concat(_this2.scaleY, "deg)");
-      }, 10);
+      }, 30);
       setInterval(function () {
         _this2.memoX = _this2.x;
         _this2.memoY = _this2.y;
@@ -372,17 +377,107 @@ var projects = [{
   modifier: 'space_invaders'
 }];
 exports.projects = projects;
-},{"../../assets/images/présentation_project/MontreConnecter.1.svg":"assets/images/présentation_project/MontreConnecter.1.svg","../../assets/images/présentation_project/logoSocomptoir.svg":"assets/images/présentation_project/logoSocomptoir.svg","../../assets/images/présentation_project/alien.svg":"assets/images/présentation_project/alien.svg"}],"js/projet/projetMV.js":[function(require,module,exports) {
+},{"../../assets/images/présentation_project/MontreConnecter.1.svg":"assets/images/présentation_project/MontreConnecter.1.svg","../../assets/images/présentation_project/logoSocomptoir.svg":"assets/images/présentation_project/logoSocomptoir.svg","../../assets/images/présentation_project/alien.svg":"assets/images/présentation_project/alien.svg"}],"js/projet/page__projet.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.inTheProject = inTheProject;
+
+var _projetMV = require("./projetMV");
+
+function inTheProject() {
+  var project = document.querySelector('.project');
+  var mainHidden = document.querySelectorAll('[data-display=visible]');
+  project.addEventListener('click', function () {
+    Theproject();
+    mainHidden.forEach(function (element) {
+      element.style.display = "none";
+    });
+    var projects = document.querySelectorAll('.the__project');
+
+    projects[_projetMV.numberProject].classList.add('visible');
+  });
+}
+
+var Theproject = function Theproject(numberProject) {
+  TweenLite.to(".circlesWhite", 10, {
+    css: {
+      animation: 'rotationCircle initial initial',
+      zIndex: '-100'
+    },
+    ease: Power2.easeOut
+  }); //////////
+
+  TweenLite.to("#Ellipse_14 circle", 6, {
+    css: {
+      strokeDasharray: '10px',
+      transitionDuration: '100ms'
+    },
+    ease: Power2.easeOut
+  });
+  TweenLite.to("#Ellipse_13", 6, {
+    css: {
+      strokeDasharray: '3259px',
+      strokeDashoffset: '3259px',
+      animation: 'write 3s forwards'
+    },
+    ease: Power2.easeOut
+  });
+  TweenLite.to("#Ellipse_12", 3, {
+    css: {
+      strokeDasharray: '1991px',
+      strokeDashoffset: '1991px',
+      animation: 'write 3s forwards'
+    },
+    ease: Power2.easeOut
+  });
+  TweenLite.to("#Ellipse_11", 4, {
+    css: {
+      strokeDasharray: '1301px',
+      strokeDashoffset: '1301px',
+      animation: 'write 3s forwards'
+    },
+    ease: Power2.easeOut
+  });
+
+  if (window.innerWidth < 800) {
+    TweenLite.to(".sphere", 3, {
+      css: {
+        top: "-50px",
+        animation: "circleGoCenter 0s",
+        position: 'sticky'
+      },
+      ease: Power2.easeOut
+    });
+  } else {
+    TweenLite.to(".sphere", 3, {
+      css: {
+        top: "-300px",
+        width: "40vw",
+        height: "40vw",
+        animation: "circleGoCenter 0s"
+      },
+      ease: Power2.easeOut
+    });
+  }
+};
+},{"./projetMV":"js/projet/projetMV.js"}],"js/projet/projetMV.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.changeOfProject = changeOfProject;
+exports.numberProject = void 0;
 
 var _projects = require("./projects");
 
+var _page__projet = require("../projet/page__projet");
+
 var numberProject = 0;
+exports.numberProject = numberProject;
 
 function changeOfProject() {
   renderChangeOfProject();
@@ -391,10 +486,10 @@ function changeOfProject() {
 function renderChangeOfProject() {
   var project = document.querySelector('#home__page .project');
   project.innerHTML = "";
-  numberProject++;
+  exports.numberProject = numberProject = numberProject + 1;
 
   if (numberProject > _projects.projects.length - 1) {
-    numberProject = 0;
+    exports.numberProject = numberProject = 0;
   }
 
   var tween = TweenLite.to(".circlesWhite", 15, {
@@ -423,7 +518,7 @@ var ChangeOfProjectView = function ChangeOfProjectView(project) {
     a: document.createElement('a'),
     button: document.createElement('button'),
     render: function render() {
-      this.a.href = "#hideenDiv";
+      this.a.href = "#home__page";
       this.img.src = project.image;
       view.a.appendChild(this.img);
       this.illustrationOfProject.appendChild(this.a);
@@ -432,7 +527,7 @@ var ChangeOfProjectView = function ChangeOfProjectView(project) {
   };
   view.illustrationOfProject.className = 'illustration__of__project';
   view.illustrationOfProject.addEventListener('click', function () {
-    Theproject(numberProject);
+    (0, _page__projet.inTheProject)();
   });
   view.titlOfProject.className = 'title__of__project';
   view.render();
@@ -440,8 +535,7 @@ var ChangeOfProjectView = function ChangeOfProjectView(project) {
 };
 
 var renderNavProject = function renderNavProject(project) {
-  var nav = document.querySelector('.nav__project p'); // console.log(numberProject)
-
+  var nav = document.querySelector('.nav__project p');
   nav.classList.add('trasition__back');
   setTimeout(function () {
     nav.innerHTML = "";
@@ -452,7 +546,7 @@ var renderNavProject = function renderNavProject(project) {
     }, 200);
   }, 400);
 };
-},{"./projects":"js/projet/projects.js"}],"js/function/scroll.js":[function(require,module,exports) {
+},{"./projects":"js/projet/projects.js","../projet/page__projet":"js/projet/page__projet.js"}],"js/function/scroll.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -508,7 +602,7 @@ function () {
       this.detectSwipe();
       this.checkInversionPosition();
       document.addEventListener("mousewheel", function (event) {
-        if (!_this2.checkBottomPage() || _this2.waitTime.waite) {
+        if (!_this2.checkBottomPage() || _this2.waitTime.waite && text__of__presentation.style.display === 'none') {
           return;
         }
 
@@ -704,10 +798,13 @@ var _projetMV = require("./projet/projetMV");
 
 var _animation = require("./animation/animation");
 
-(0, _animation.animation)();
+var _page__projet = require("./projet/page__projet");
+
 var srollPosition = new _scroll.SrollPosition(document.querySelector('.sroll__barre'));
 srollPosition.detectScroll();
-},{"./function/cursor":"js/function/cursor.js","./lib/viewPort":"js/lib/viewPort.js","./function/scroll":"js/function/scroll.js","./projet/projetMV":"js/projet/projetMV.js","./animation/animation":"js/animation/animation.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _animation.animation)();
+(0, _page__projet.inTheProject)();
+},{"./function/cursor":"js/function/cursor.js","./lib/viewPort":"js/lib/viewPort.js","./function/scroll":"js/function/scroll.js","./projet/projetMV":"js/projet/projetMV.js","./animation/animation":"js/animation/animation.js","./projet/page__projet":"js/projet/page__projet.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -735,7 +832,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59408" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60228" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

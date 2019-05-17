@@ -2,7 +2,6 @@ import { ViewPort } from "../lib/viewPort";
 import { changeOfProject } from '../projet/projetMV';
 
 class SrollPosition  {
-  
   constructor( element ){
     this.element = element ;
     this.positionX = -100;
@@ -32,7 +31,7 @@ class SrollPosition  {
     this.checkInversionPosition()
     
     document.addEventListener("mousewheel", (event)=>{
-      if ( !this.checkBottomPage() || this.waitTime.waite ) {
+      if ( !this.checkBottomPage() || this.waitTime.waite && text__of__presentation.style.display === 'none' ) {
         return
       }
       

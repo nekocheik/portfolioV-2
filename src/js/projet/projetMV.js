@@ -1,5 +1,5 @@
 import { projects  } from './projects'; 
-
+import { inTheProject } from '../projet/page__projet'
 
 var numberProject = 0 ;
 
@@ -8,9 +8,9 @@ function changeOfProject() {
 }
 
 function renderChangeOfProject() {
-
-
-
+  
+  
+  
   var project = document.querySelector('#home__page .project')
   project.innerHTML = "";
   numberProject++;
@@ -23,14 +23,14 @@ function renderChangeOfProject() {
   {css:{    
     animation: 'rotationCircle 15s infinite , retractation 4s forwards',
   }});  
-
+  
   setTimeout(() => {
     var tween = TweenLite.to(".circlesWhite", 15, 
     {css:{    
       animation: 'rotationCircle 15s infinite',
     }});  
   }, 2900);
-
+  
   
   var view = ChangeOfProjectView(projects[numberProject]);
   project.appendChild(view.illustrationOfProject)
@@ -45,9 +45,9 @@ var ChangeOfProjectView = function(project) {
     illustrationOfProject : document.createElement('div'),
     a :  document.createElement('a') ,
     button : document.createElement('button'),
-
+    
     render: function() {
-      this.a.href = `#hideenDiv`;
+      this.a.href = `#home__page`;
       this.img.src = project.image;
       view.a.appendChild(this.img);
       this.illustrationOfProject.appendChild(this.a);
@@ -59,8 +59,9 @@ var ChangeOfProjectView = function(project) {
   view.illustrationOfProject.className = 'illustration__of__project';
   
   
-  view.illustrationOfProject.addEventListener('click', function(){
-    Theproject( numberProject )
+  
+  view.illustrationOfProject.addEventListener('click', ()=>{
+    inTheProject()
   })
   
   view.titlOfProject.className = 'title__of__project';
@@ -69,10 +70,8 @@ var ChangeOfProjectView = function(project) {
 }
 
 
-var renderNavProject = function (project){
-  
+var renderNavProject = function (project){ 
   let nav = document.querySelector('.nav__project p');
-  // console.log(numberProject)
   nav.classList.add('trasition__back');
   setTimeout(()=>{
     nav.innerHTML = "" ;
@@ -82,10 +81,10 @@ var renderNavProject = function (project){
       nav.className = "";
     }, 200)
   }, 400)
-
+  
 }
 
 
 
 
-export { changeOfProject }
+export { changeOfProject , numberProject }

@@ -2,6 +2,7 @@ import { ViewPort } from "../lib/viewPort";
 
 
 class givPotionPointer {
+
   constructor ( element , child ){
     this.element = element ; 
     this.x = null ;
@@ -33,11 +34,17 @@ class givPotionPointer {
         this.scaleY-- ;
       }
       
-      
       this.element.style.left = `${this.x}px`;
       this.element.style.top = `${this.y}px`;
       
-      this.element.style.transform = `skew(${this.scaleX * 1.5 }deg , ${this.scaleY * 1.5 }deg)`
+
+
+      TweenLite.to( this.element , 10, 
+      {css:{    
+        transform : `skew(${this.scaleX * 1.5 }deg , ${this.scaleY * 1.5 }deg)`
+      },
+      ease:Power2.easeOut });
+
     }) 
   }
   
@@ -65,7 +72,7 @@ class givPotionPointer {
     
     setInterval(() => {
       this.element.style.transform = `skew(${ this.scaleX }deg , ${this.scaleY }deg)`
-    }, 10);
+    }, 30);
     
     setInterval(() => {
       this.memoX = this.x ;

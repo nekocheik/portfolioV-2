@@ -89,6 +89,11 @@ a:link {
   text-decoration: none;
 }
 
+body {
+  background-color: black;
+  color: white;
+}
+
 @-webkit-keyframes rotation {
   from {
     -webkit-transform: rotate(0deg);
@@ -184,9 +189,43 @@ a:link {
     transform: rotate(1turn);
   }
 }
+@keyframes retractation {
+  from {
+    display: none;
+    transform: scale(1, 1) rotate(0turn);
+  }
+  50% {
+    transform: scale(0.5, 0.5) rotate(0.5turn);
+  }
+  70% {
+    transform: scale(1, 1) rotate(1turn);
+  }
+  100% {
+    transform: scale(1, 1) rotate(1turn);
+  }
+}
 .cursor {
   position: absolute;
   z-index: 10;
+  pointer-events: none;
+}
+.cursor .Ellipse {
+  filter: invert(100%);
+}
+.cursor .circle {
+  filter: invert(100%);
+}
+
+.cursor__Two {
+  transition-duration: transform 100ms;
+}
+
+.cursor__one {
+  transition-duration: transform 100ms;
+}
+
+body {
+  cursor: none;
 }
 
 .Menu__burger {
@@ -245,7 +284,7 @@ a:link {
     right: 5vw;
     justify-content: space-between;
     height: initial;
-    width: 437px;
+    width: 337px;
   }
   .Menu__burger p {
     font-size: 18px;
@@ -274,6 +313,20 @@ a:link {
   .Menu__burger.move {
     opacity: initial;
   }
+}
+
+.logo {
+  stroke-width: 1;
+  height: 40px;
+  top: 20px;
+  left: 15px;
+  position: fixed;
+  opacity: 0.3;
+}
+
+.text {
+  stroke-width: 10;
+  stroke: white;
 }
 
 #home__page {
@@ -436,13 +489,17 @@ a:link {
   width: 80%;
   display: block;
   margin: auto;
+  display: none;
+}
+#in__the__project .the__project.visible {
+  display: block;
 }
 #in__the__project .the__project .title__of__project {
   display: block;
   animation: enterLeft 5s;
 }
 #in__the__project .the__project .title__of__project h1 {
-  font-size: 38px;
+  font-size: 68px;
   font-family: "Lemon/Milk";
   padding-top: 280px;
   padding-bottom: 10px;
@@ -590,47 +647,170 @@ a:link {
     letter-spacing: 0.25rem;
   }
 }
-#in__the__project .the__project strong {
+@media screen and (min-width: 800px) {
+  #in__the__project .the__project strong {
+    font-weight: 900;
+  }
+  #in__the__project .the__project .title__of__project {
+    margin-top: -10vh;
+    animation: enterLeft 4s;
+  }
+  #in__the__project .the__project .title__of__project h1 {
+    font-size: 90px;
+    font-family: "Avenir LT Std";
+    font-weight: 900;
+    animation: 3.5s blinkArmani infinite alternate 2s;
+  }
+  #in__the__project .the__project .title__of__project h2 {
+    font-size: 20px;
+    font-family: "Avenir LT Std";
+    padding-bottom: 20px;
+  }
+  #in__the__project .the__project .title__of__project h2 strong {
+    letter-spacing: 2px;
+  }
+  #in__the__project .the__project .description {
+    padding-top: 2%;
+    max-width: 80vw;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-weight: 300;
+    line-height: 40px;
+  }
+  #in__the__project .the__project .description .description__text {
+    max-width: 604px;
+    padding-bottom: 20%;
+  }
+  #in__the__project .the__project .description p {
+    font-size: 20px;
+  }
+  #in__the__project .the__project .description .image {
+    padding-top: 0%;
+  }
+  #in__the__project .the__project .description .image img {
+    margin-bottom: 60px;
+  }
+}
+
+#about main {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+#about .part__about {
+  margin-top: 20%;
+  margin-left: 10%;
+}
+#about h1 {
+  font-family: "Lemon/Milk";
+  font-size: 42px;
+}
+#about h2 {
+  font-family: "Avenir LT Std";
+  margin-top: 5vh;
+  font-size: 32px;
   font-weight: 900;
 }
-#in__the__project .the__project .title__of__project {
-  margin-top: -10vh;
-  animation: enterLeft 4s;
-}
-#in__the__project .the__project .title__of__project h1 {
-  font-size: 90px;
+#about .about__text {
+  max-width: 564px;
+  margin-top: 5vh;
   font-family: "Avenir LT Std";
-  font-weight: 900;
-  animation: 3.5s blinkArmani infinite alternate 2s;
+  font-size: 18px;
+  line-height: 45px;
 }
-#in__the__project .the__project .title__of__project h2 {
-  font-size: 20px;
+#about .link {
+  margin-top: 20px;
+  width: 188px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Lemon/Milk";
+  font-size: 34px;
+  align-items: center;
+  margin: auto;
+}
+#about .portrait__of__cheik {
+  display: none;
+}
+#about button {
+  margin: 30px auto auto auto;
+  display: block;
   font-family: "Avenir LT Std";
-  padding-bottom: 20px;
-}
-#in__the__project .the__project .title__of__project h2 strong {
+  color: black;
+  font-size: 16px;
+  border: none;
+  padding: 15px 35px 15px 35px;
+  font-weight: 600;
   letter-spacing: 2px;
 }
-#in__the__project .the__project .description {
-  padding-top: 2%;
-  max-width: 80vw;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  font-weight: 300;
-  line-height: 40px;
+@media screen and (min-width: 800px) {
+  #about .circle__svg {
+    height: 0px;
+    position: absolute;
+    top: 0%;
+    right: -4%;
+  }
+  #about .circle__svg .circlesWhite {
+    height: 800px;
+  }
 }
-#in__the__project .the__project .description .description__text {
-  max-width: 604px;
-  padding-bottom: 20%;
+@media screen and (min-width: 800px) and (min-height: 1000px) {
+  #about .circle__svg {
+    right: -1%;
+    top: 5%;
+  }
 }
-#in__the__project .the__project .description p {
-  font-size: 20px;
+@media screen and (min-width: 800px) {
+  #about .part__about {
+    margin-top: initial;
+    margin-left: initial;
+    margin: auto;
+    padding-right: 25vw;
+  }
 }
-#in__the__project .the__project .description .image {
-  padding-top: 0%;
+@media screen and (min-width: 800px) {
+  #about h1 {
+    font-size: 94px;
+    letter-spacing: 20px;
+  }
 }
-#in__the__project .the__project .description .image img {
-  margin-bottom: 60px;
+@media screen and (min-width: 800px) {
+  #about .portrait {
+    height: 0px;
+    position: absolute;
+    top: 75%;
+    right: 5%;
+  }
+}
+@media screen and (min-width: 800px) {
+  #about .portrait__of__cheik {
+    display: inline;
+    position: relative;
+    margin-left: -300px;
+    margin-top: -400px;
+  }
+}
+@media screen and (min-width: 800px) {
+  #about .container__sphere {
+    height: 0px;
+    position: absolute;
+    top: 20%;
+    right: 8%;
+  }
+}
+@media screen and (min-width: 800px) {
+  #about .sphere {
+    box-shadow: inset 0 0 50px #fff, inset 20px 0 80px #f0f, inset -20px 0 80px #0ff, inset 20px 0 300px #f0f, inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px rgba(0, 255, 255, 0.438);
+    border-radius: 100%;
+    width: 450px;
+    height: 450px;
+  }
+}
+@media screen and (min-width: 800px) {
+  #about .contact {
+    margin-top: 10vh;
+    max-width: 564px;
+  }
 }
 
 @font-face {
