@@ -52,7 +52,7 @@
 ////// nav barre //////
 
 .Menu__burger{
-  right: 100px;
+  right: 50px;
   top : 35px;
   @media screen and ( min-width : 800px ) {
     nav{
@@ -76,6 +76,8 @@
         width: initial;
         height: initial;
         margin: initial;
+        font-weight: 100;
+
         &.active{
           transition: all 0.5s 0.4s ,font-size 0.5s 0.3s , width 0.5s  ;
           justify-items: center;

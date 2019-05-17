@@ -1,5 +1,9 @@
     
     #about{
+      .circle__svg{
+        @include hiddenViewport ;
+        position: absolute;
+      }
       overflow: hidden;
       main{
         display: flex;
@@ -48,8 +52,6 @@
       
       @media screen and ( min-width : 800px ) {
         .circle__svg{
-          @include hiddenViewport ;
-          position: absolute;
           top: 0%;
           right: -4%;
           .circlesWhite{
@@ -58,8 +60,8 @@
           @media screen and ( min-height : 1000px ) {
             right: -1%;
             top: 5%;
+          }
         }
-      }
         .part__about{
           margin-top: initial;
           margin-left: initial;

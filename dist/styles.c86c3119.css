@@ -303,8 +303,8 @@ body {
 }
 
 .Menu__burger {
-  right: 100px;
-  right: 6.25rem;
+  right: 50px;
+  right: 3.125rem;
   top: 35px;
   top: 2.1875rem;
 }
@@ -331,6 +331,7 @@ body {
     width: initial;
     height: initial;
     margin: initial;
+    font-weight: 100;
   }
   .Menu__burger ul li.active {
     transition: all 0.5s 0.4s, font-size 0.5s 0.3s, width 0.5s;
@@ -796,6 +797,11 @@ body {
 #about {
   overflow: hidden;
 }
+#about .circle__svg {
+  height: 0px;
+  height: 0;
+  position: absolute;
+}
 #about main {
   display: flex;
   height: 100vh;
@@ -861,9 +867,6 @@ body {
 }
 @media screen and (min-width: 800px) {
   #about .circle__svg {
-    height: 0px;
-    height: 0;
-    position: absolute;
     top: 0%;
     right: -4%;
   }
