@@ -721,6 +721,7 @@ function () {
     value: function inversionPositionX() {
       this.projectStyles.translateZ = 0;
       this.positionX = -100;
+      this.projectStyles.opacity = 1;
       this.element.style.transform = "translateX( ".concat(this.positionX, "vw)");
       this.projecTransform3d();
     }

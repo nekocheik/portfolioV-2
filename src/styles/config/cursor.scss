@@ -4,13 +4,12 @@
   pointer-events : none ;
   .Ellipse{
     // fill: black;
-    filter: invert(100%);
   }
   .circle{
     // stroke: black;
-    filter: invert(100%);
   }
 }
+
 
 .cursor__Two{
   transition-duration: transform 100ms ;
@@ -23,4 +22,10 @@
 
 body{
   cursor: none;
+}
+
+@media screen and ( max-width : 800px) {
+  .cursor{
+    display: none;
+  }
 }

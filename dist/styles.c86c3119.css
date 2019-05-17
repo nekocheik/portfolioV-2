@@ -209,13 +209,6 @@ body {
   z-index: 10;
   pointer-events: none;
 }
-.cursor .Ellipse {
-  filter: invert(100%);
-}
-.cursor .circle {
-  filter: invert(100%);
-}
-
 .cursor__Two {
   transition-duration: transform 100ms;
 }
@@ -228,6 +221,11 @@ body {
   cursor: none;
 }
 
+@media screen and (max-width: 800px) {
+  .cursor {
+    display: none;
+  }
+}
 .Menu__burger {
   height: 0px;
   width: 0px;
@@ -692,6 +690,9 @@ body {
   }
 }
 
+#about {
+  overflow: hidden;
+}
 #about main {
   display: flex;
   height: 100vh;
