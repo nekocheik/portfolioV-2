@@ -21,3 +21,90 @@
     transform: rotate( 1turn );
   }
 }
+
+
+
+@keyframes blinkArmani {
+  from {
+    color: black;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: $armani;
+  }
+  to {
+    color: $armani;;
+    -webkit-text-stroke-width: 0px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+  }
+}
+
+
+@keyframes blinkso_comptoir {
+  from {
+    color: black;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: $comptoir;
+  }
+  to {
+    color: $comptoir;
+    -webkit-text-stroke-width: 0px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+  }
+}
+
+@keyframes blinkInvaders {
+  from {
+    color: black;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: white;
+  }
+  to {
+    color: white;
+    -webkit-text-stroke-width: 0px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+  }
+}
+
+@keyframes circleGoCenter {
+  from{
+    top: -150px;
+  }
+  to {
+    top: 200px;
+  }
+}
+
+@keyframes enterLeft {
+  from{
+    opacity: 0.5;
+    transform: translateX(-100vw)
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0vw)
+  }
+}
+
+@keyframes enterRight  {
+  from{
+    opacity: 0.5;
+    transform: translateX(-100vw)
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0vw)
+  }
+}
+
+
+
+@keyframes write {
+  to{
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes rotationCircle {
+  100% {
+    transform: rotate( 1turn );
+  }
+}

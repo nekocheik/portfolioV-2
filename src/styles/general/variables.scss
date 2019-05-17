@@ -20,4 +20,13 @@
   10px 0 80px rgba(0, 255, 255, 0.438);
 }
 
+@mixin button{
+    font-family: "Avenir LT Std";
+    color: black;
+    font-size: 16px;
+    border: none;
+    padding: 15px 35px 15px 35px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
 

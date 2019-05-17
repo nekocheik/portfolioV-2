@@ -16,7 +16,7 @@ var projects = [
     numberProject : '2',
     subTitle : 'Projet : UI / UI',
     skills : ['xd' , 'illustrator'] ,
-    image : require('../../assets/images/présentation_project/MontreConnecter.1.svg'), 
+    image : require('../../assets/images/présentation_project/logoSocomptoir.svg'), 
     button : 'REGARDER LES MAQUETTES' ,
     modifier : 'so_comptoir'
   },{
@@ -25,7 +25,7 @@ var projects = [
     numberProject : '3',
     subTitle : 'Projet : Javascript',
     skills : ['JavaScript' , 'Canvas' , 'Html' , 'Sass'] ,
-    image : require('../../assets/images/présentation_project/MontreConnecter.1.svg'),
+    image : require('../../assets/images/présentation_project/alien.svg'),
     button : 'JOUER AU JEU' ,
     modifier : 'space_invaders'
   }

@@ -332,6 +332,10 @@ exports.cursor = cursor;
 cursor();
 },{"../lib/viewPort":"js/lib/viewPort.js"}],"assets/images/présentation_project/MontreConnecter.1.svg":[function(require,module,exports) {
 module.exports = "/MontreConnecter.1.b29c4f11.svg";
+},{}],"assets/images/présentation_project/logoSocomptoir.svg":[function(require,module,exports) {
+module.exports = "/logoSocomptoir.bebc752a.svg";
+},{}],"assets/images/présentation_project/alien.svg":[function(require,module,exports) {
+module.exports = "/alien.fcbdf785.svg";
 },{}],"js/projet/projects.js":[function(require,module,exports) {
 "use strict";
 
@@ -354,7 +358,7 @@ var projects = [{
   numberProject: '2',
   subTitle: 'Projet : UI / UI',
   skills: ['xd', 'illustrator'],
-  image: require('../../assets/images/présentation_project/MontreConnecter.1.svg'),
+  image: require('../../assets/images/présentation_project/logoSocomptoir.svg'),
   button: 'REGARDER LES MAQUETTES',
   modifier: 'so_comptoir'
 }, {
@@ -363,12 +367,12 @@ var projects = [{
   numberProject: '3',
   subTitle: 'Projet : Javascript',
   skills: ['JavaScript', 'Canvas', 'Html', 'Sass'],
-  image: require('../../assets/images/présentation_project/MontreConnecter.1.svg'),
+  image: require('../../assets/images/présentation_project/alien.svg'),
   button: 'JOUER AU JEU',
   modifier: 'space_invaders'
 }];
 exports.projects = projects;
-},{"../../assets/images/présentation_project/MontreConnecter.1.svg":"assets/images/présentation_project/MontreConnecter.1.svg"}],"js/projet/projetMV.js":[function(require,module,exports) {
+},{"../../assets/images/présentation_project/MontreConnecter.1.svg":"assets/images/présentation_project/MontreConnecter.1.svg","../../assets/images/présentation_project/logoSocomptoir.svg":"assets/images/présentation_project/logoSocomptoir.svg","../../assets/images/présentation_project/alien.svg":"assets/images/présentation_project/alien.svg"}],"js/projet/projetMV.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -378,7 +382,6 @@ exports.changeOfProject = changeOfProject;
 
 var _projects = require("./projects");
 
-console.log('ok');
 var numberProject = 0;
 
 function changeOfProject() {
@@ -421,10 +424,10 @@ var ChangeOfProjectView = function ChangeOfProjectView(project) {
     button: document.createElement('button'),
     render: function render() {
       this.a.href = "#hideenDiv";
-      this.img.src = project.assets.pesentation;
+      this.img.src = project.image;
       view.a.appendChild(this.img);
       this.illustrationOfProject.appendChild(this.a);
-      this.titlOfProject.innerHTML = "<h3 class='".concat(project.modifier, "'>").concat(project.title, "</h3> <h4 class=\"type__of__projet\" >").concat(project.subTitle, "</h4>");
+      this.titlOfProject.innerHTML = "<h3 class='".concat(project.modifier, "'>").concat(project.title, "</h3> <h4 class=\"type__of__project\" >").concat(project.subTitle, "</h4>");
     }
   };
   view.illustrationOfProject.className = 'illustration__of__project';
@@ -435,7 +438,21 @@ var ChangeOfProjectView = function ChangeOfProjectView(project) {
   view.render();
   return view;
 };
-},{"./projects":"js/projet/projects.js"}],"js/app.js":[function(require,module,exports) {
+
+var renderNavProject = function renderNavProject(project) {
+  var nav = document.querySelector('.nav__project p'); // console.log(numberProject)
+
+  nav.classList.add('trasition__back');
+  setTimeout(function () {
+    nav.innerHTML = "";
+    nav.className = "trasition__come";
+    setTimeout(function () {
+      nav.innerHTML = numberProject + 1;
+      nav.className = "";
+    }, 200);
+  }, 400);
+};
+},{"./projects":"js/projet/projects.js"}],"js/function/scroll.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -443,11 +460,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.SrollPosition = void 0;
 
-var _cursor = require("./function/cursor");
+var _viewPort = require("../lib/viewPort");
 
-var _viewPort = require("./lib/viewPort");
-
-var _projetMV = require("./projet/projetMV");
+var _projetMV = require("../projet/projetMV");
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -455,8 +470,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-// let requireCusor = require('../assets/images/icons/cursor.svg'); 
-// console.log(requireCusor)
 var SrollPosition =
 /*#__PURE__*/
 function () {
@@ -468,7 +481,16 @@ function () {
     this.numberMove = 0;
     this.memoNumberMove = this.numberMove;
     this.inversion = false;
-    this.waitTime = false;
+    this.waitTime = {
+      waite: false,
+      waiting: function waiting() {
+        var _this = this;
+
+        this.waite = true, setTimeout(function () {
+          _this.waite = false;
+        }, 1500);
+      }
+    };
     this.bottomPage = false;
     this.projectStyles = {
       translateZ: 0,
@@ -479,67 +501,68 @@ function () {
   _createClass(SrollPosition, [{
     key: "detectScroll",
     value: function detectScroll() {
-      var _this = this;
+      var _this2 = this;
 
       this.element.style.transform = "translateX( ".concat(this.positionX, "vw)"); // this.inversionPosition();
 
       this.detectSwipe();
+      this.checkInversionPosition();
       document.addEventListener("mousewheel", function (event) {
-        if (!_this.checkBottomPage()) {
+        if (!_this2.checkBottomPage() || _this2.waitTime.waite) {
           return;
         }
 
-        if (_this.positionX < 0) {
-          _this.positionX = _this.positionX + event.deltaY / 2.7;
-          _this.projectStyles.translateZ = _this.projectStyles.translateZ + event.deltaY / 4.5 * 75;
+        if (_this2.positionX < 0) {
+          _this2.positionX = _this2.positionX + event.deltaY / 2.7;
+          _this2.projectStyles.translateZ = _this2.projectStyles.translateZ + event.deltaY / 4.5 * 75;
 
-          if (_this.positionX >= 0) {
-            _this.positionX = 0;
-            _this.projectStyles.translateZ = 2024;
+          if (_this2.positionX >= 0) {
+            _this2.waitTime.waiting();
+
+            _this2.positionX = -100;
+            _this2.projectStyles.translateZ = 2024;
             (0, _projetMV.changeOfProject)();
-            TweenLite.to(".project", 1, {
+            TweenLite.to(".project", 0, {
               css: {
-                transform: "translate3d( 0px , 0px , ".concat(_this.projectStyles.translateZ, "px)")
+                transform: "translate3d( 0px , 0px , ".concat(_this2.projectStyles.translateZ, "px)")
               }
             }); // for restes property for next project
 
-            _this.projectStyles.translateZ = 0;
-            _this.projectStyles.opacity = 1;
+            _this2.projectStyles.translateZ = 0;
+            _this2.projectStyles.opacity = 1;
           }
 
-          if (_this.positionX < -100) {
-            _this.positionX = -100;
-            _this.projectStyles.translateZ = 0;
+          if (_this2.positionX < -100) {
+            _this2.positionX = -100;
+            _this2.projectStyles.translateZ = 0;
           }
 
-          if (_this.positionX >= 0) {
-            _this.positionX = 0;
-            _this.projectStyles.translateZ = 100;
+          if (_this2.positionX >= 0) {
+            _this2.positionX = 0;
+            _this2.projectStyles.translateZ = 100;
           }
 
-          _this.element.style.transform = "translateX( ".concat(_this.positionX, "vw)");
+          _this2.element.style.transform = "translateX( ".concat(_this2.positionX, "vw)");
 
-          _this.projecTransform3d();
+          _this2.projecTransform3d();
 
-          _this.inversion = true;
+          _this2.inversion = true;
         }
       });
     }
   }, {
     key: "detectSwipe",
     value: function detectSwipe() {
-      var _this2 = this;
+      var _this3 = this;
 
       document.addEventListener('touchstart', function (evnt) {
         var startClientY = evnt.changedTouches[0].clientY;
         document.addEventListener('touchmove', function (event) {
-          console.log(event);
-
-          if (!_this2.checkBottomPage()) {
+          if (!_this3.checkBottomPage()) {
             return;
           }
 
-          _this2.inversion = false;
+          _this3.inversion = false;
           var touchDelta = event.changedTouches[0].clientY - startClientY;
 
           if (touchDelta < 0) {
@@ -550,21 +573,36 @@ function () {
             return;
           }
 
-          if (_this2.positionX < 0) {
-            _this2.positionX = _this2.positionX + touchDelta / 10;
+          if (_this3.positionX < 0) {
+            _this3.positionX = _this3.positionX + touchDelta / 10;
+            _this3.projectStyles.translateZ = _this3.projectStyles.translateZ + touchDelta / 6.5;
 
-            if (_this2.positionX > 0) {
-              _this2.positionX = 0;
+            if (_this3.positionX > 0) {
+              // not animation for back of the barre 
+              _this3.positionX = 0;
               (0, _projetMV.changeOfProject)();
+
+              _this3.waitTime.waiting();
+
+              _this3.positionX = -100;
+              _this3.projectStyles.translateZ = 2024;
+              (0, _projetMV.changeOfProject)();
+              TweenLite.to(".project", 0, {
+                css: {
+                  transform: "translate3d( 0px , 0px , ".concat(_this3.projectStyles.translateZ, "px)")
+                }
+              });
             }
 
-            if (_this2.positionX < -100) {
-              _this2.positionX = -100;
+            if (_this3.positionX < -100) {
+              _this3.positionX = -100;
             }
 
-            _this2.element.style.transform = "translateX( ".concat(_this2.positionX, "vw)");
+            _this3.element.style.transform = "translateX( ".concat(_this3.positionX, "vw)");
 
-            _this2.checkInversionPosition(_this2.positionX);
+            _this3.projecTransform3d();
+
+            _this3.checkInversionPosition(_this3.positionX);
           }
         });
         document.addEventListener('touchstart', function (event) {
@@ -575,19 +613,27 @@ function () {
   }, {
     key: "checkInversionPosition",
     value: function checkInversionPosition(positionX) {
-      var _this3 = this;
+      var _this4 = this;
 
       var MemoPositionX = positionX;
       setTimeout(function () {
-        if (MemoPositionX, _this3.positionX || _this3.positionX === 0) {
-          _this3.inversion = true;
+        if (MemoPositionX <= _this4.positionX) {
+          _this4.inversionPositionX();
         }
       }, 1500);
     }
   }, {
+    key: "inversionPositionX",
+    value: function inversionPositionX() {
+      this.projectStyles.translateZ = 0;
+      this.positionX = -100;
+      this.element.style.transform = "translateX( ".concat(this.positionX, "vw)");
+      this.projecTransform3d();
+    }
+  }, {
     key: "checkBottomPage",
     value: function checkBottomPage() {
-      var _this4 = this;
+      var _this5 = this;
 
       var options = {
         root: document.querySelector('body'),
@@ -597,9 +643,9 @@ function () {
       var viewPort = new _viewPort.ViewPort(document.querySelector('body'), 'bottom', 'bottom');
       viewPort.detectViewport(function (callback) {
         if (callback) {
-          _this4.bottomPage = true;
+          _this5.bottomPage = true;
         } else {
-          _this4.bottomPage = false;
+          _this5.bottomPage = false;
         }
       });
       return this.bottomPage;
@@ -622,13 +668,46 @@ function () {
 }();
 
 exports.SrollPosition = SrollPosition;
-var srollPosition = new SrollPosition(document.querySelector('.sroll__barre'));
-srollPosition.detectScroll(); // let viewPort = new ViewPort( dom , 'bottom' , 'bottom' , 0  )
-// viewPort.detectViewport( (callback)=>{
-//   if (callback) {
-//   }
-// })
-},{"./function/cursor":"js/function/cursor.js","./lib/viewPort":"js/lib/viewPort.js","./projet/projetMV":"js/projet/projetMV.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../lib/viewPort":"js/lib/viewPort.js","../projet/projetMV":"js/projet/projetMV.js"}],"js/animation/animation.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.animation = void 0;
+
+var _viewPort = require("../lib/viewPort");
+
+var animation = function animation(params) {
+  var titleProjet = document.querySelector('.projects h3');
+  var viewPort = new _viewPort.ViewPort(titleProjet);
+  viewPort.detectViewport(function (callback) {
+    if (callback) {
+      titleProjet.classList.add('transtision');
+    } else {
+      titleProjet.classList.remove('transtision');
+    }
+  });
+};
+
+exports.animation = animation;
+},{"../lib/viewPort":"js/lib/viewPort.js"}],"js/app.js":[function(require,module,exports) {
+"use strict";
+
+var _cursor = require("./function/cursor");
+
+var _viewPort = require("./lib/viewPort");
+
+var _scroll = require("./function/scroll");
+
+var _projetMV = require("./projet/projetMV");
+
+var _animation = require("./animation/animation");
+
+(0, _animation.animation)();
+var srollPosition = new _scroll.SrollPosition(document.querySelector('.sroll__barre'));
+srollPosition.detectScroll();
+},{"./function/cursor":"js/function/cursor.js","./lib/viewPort":"js/lib/viewPort.js","./function/scroll":"js/function/scroll.js","./projet/projetMV":"js/projet/projetMV.js","./animation/animation":"js/animation/animation.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -656,7 +735,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62433" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59408" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

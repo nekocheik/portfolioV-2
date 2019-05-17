@@ -1,0 +1,78 @@
+#in__the__project{
+  .the__project{
+    width: 80%;
+    display: block;
+    margin: auto;
+    .title__of__project{
+      display: block;
+      animation: enterLeft 5s ;
+      h1{
+        font-size: 38px;
+        font-family: 'Lemon/Milk';
+        padding-top: 280px;
+         &.armani{
+          color: $armani;
+          animation: blinkArmani 3.5s infinite alternate;
+        }&.so_comptoir{
+          color: jaune;
+          animation: blinkso_comptoir 3.5s infinite alternate;
+        }&.space_invaders{
+          animation: blinkInvaders 3.5s infinite alternate;
+        }
+        // animation:  3.5s blinkArmani infinite alternate 2s ;
+        padding-bottom: 10px;
+      }h2{
+        font-size: 20px;
+        padding-bottom: 25px;
+        font-family: 'Avenir LT Std'
+      }
+    }
+    .description{
+      display: flex;
+      animation: enterRight 1.5s ;
+      max-width: 499px;
+      flex-wrap: wrap;
+      strong{
+        font-weight: 900;
+      }
+      p{
+        font-size: 20px;
+      }
+      .step{
+        line-height: 25px;
+      }
+      .button{
+        padding-top: 30px ;
+        button{
+          margin-top: 15px;
+          margin: auto;
+          display: block;
+          @include button ;
+        }
+      }
+      .description__skills ul{
+        display: flex;
+        justify-content: space-around;
+        width: 90%;
+        max-width: 499px;
+        li{
+          font-weight: 900;
+          margin: 40px 0px 0px 0px;
+        }
+      }
+    }
+    .images{
+      display: contents;
+    }
+    .image{
+      padding-top: 20%;
+      h3{
+        padding-bottom: 5px;
+      }
+      img{
+        width: 80vw;
+        max-width: 458px;
+      }
+    }
+  }
+}

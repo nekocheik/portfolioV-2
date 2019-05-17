@@ -58,12 +58,14 @@
 
 .Menu__burger{
   @media screen and ( min-width : 800px ) {
+    display : flex;
     bottom : initial ;
     top: 28px;
     flex-direction: row;
     right: 5vw;
     justify-content: space-between;
-    width: 357px;
+    height: initial;
+    width: 437px;
     p{
       font-size: 18px;
       font-family: Avenir;
@@ -72,6 +74,7 @@
       background-color: initial;
       width: initial;
       padding: initial;
+      display: inline;
       &.active{
         font-size: 18px;
         border: none ;

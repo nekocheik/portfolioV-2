@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -17,6 +21,72 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Avenir LT Std";
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button:focus {
+  background: #0053ba;
+}
+
+button:focus {
+  outline: none;
+  outline-offset: -4px;
+  text-decoration: none;
+}
+
+button:active {
+  text-decoration: none;
+}
+
+a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:link {
+  color: #E17A04;
+  text-decoration: none;
 }
 
 @-webkit-keyframes rotation {
@@ -30,11 +100,83 @@ time, mark, audio, video {
 @keyframes sphereGoToCenter {
   from {
     top: -150px;
-    top: -9.375rem;
   }
   to {
     top: 200px;
-    top: 12.5rem;
+  }
+}
+@keyframes rotationCircle {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+@keyframes blinkArmani {
+  from {
+    color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #0757AA;
+  }
+  to {
+    color: #0757AA;
+    -webkit-text-stroke-width: 0px;
+    -webkit-text-stroke-color: black;
+  }
+}
+@keyframes blinkso_comptoir {
+  from {
+    color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #F4CB65;
+  }
+  to {
+    color: #F4CB65;
+    -webkit-text-stroke-width: 0px;
+    -webkit-text-stroke-color: black;
+  }
+}
+@keyframes blinkInvaders {
+  from {
+    color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+  }
+  to {
+    color: white;
+    -webkit-text-stroke-width: 0px;
+    -webkit-text-stroke-color: black;
+  }
+}
+@keyframes circleGoCenter {
+  from {
+    top: -150px;
+  }
+  to {
+    top: 200px;
+  }
+}
+@keyframes enterLeft {
+  from {
+    opacity: 0.5;
+    transform: translateX(-100vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0vw);
+  }
+}
+@keyframes enterRight {
+  from {
+    opacity: 0.5;
+    transform: translateX(-100vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0vw);
+  }
+}
+@keyframes write {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 @keyframes rotationCircle {
@@ -49,23 +191,17 @@ time, mark, audio, video {
 
 .Menu__burger {
   height: 0px;
-  height: 0;
   width: 0px;
-  width: 0;
   position: fixed;
   bottom: 130px;
-  bottom: 8.125rem;
   right: 70px;
-  right: 4.375rem;
   overflow: visible;
 }
 .Menu__burger .croi {
   height: 30px;
-  height: 1.875rem;
   display: block;
   margin: auto;
   transform: translateY(50px);
-  transform: translateY(3.125rem);
   z-index: -2;
   fill: black;
   opacity: 0;
@@ -80,16 +216,11 @@ time, mark, audio, video {
   transition: font-size 0.3s, width 0.7s 0.4s;
   z-index: 2;
   font-size: 1px;
-  font-size: 0.0625rem;
   color: black;
   border: 1px solid white;
-  border: 0.0625rem solid white;
   margin: 2px;
-  margin: 0.125rem;
   padding-left: 45px;
-  padding-left: 2.8125rem;
   padding-top: 6px;
-  padding-top: 0.375rem;
   background-color: rgba(0, 0, 0, 0.589);
   width: 0vw;
 }
@@ -99,39 +230,35 @@ time, mark, audio, video {
   font-size: initial;
   color: white;
   border: 1px solid white;
-  border: 0.0625rem solid white;
   margin: 5px;
-  margin: 0.3125rem;
   width: 92vw;
   text-align: center;
   padding: 5px;
-  padding: 0.3125rem;
 }
 
 @media screen and (min-width: 800px) {
   .Menu__burger {
+    display: flex;
     bottom: initial;
     top: 28px;
-    top: 1.75rem;
     flex-direction: row;
     right: 5vw;
     justify-content: space-between;
-    width: 357px;
-    width: 22.3125rem;
+    height: initial;
+    width: 437px;
   }
   .Menu__burger p {
     font-size: 18px;
-    font-size: 1.125rem;
     font-family: Avenir;
     color: white;
     border: none;
     background-color: initial;
     width: initial;
     padding: initial;
+    display: inline;
   }
   .Menu__burger p.active {
     font-size: 18px;
-    font-size: 1.125rem;
     border: none;
     margin: initial;
     width: initial;
@@ -158,7 +285,6 @@ time, mark, audio, video {
 }
 #home__page .all__svg {
   height: 0px;
-  height: 0;
   width: 100%;
 }
 #home__page .all__svg .circlesWhite {
@@ -175,7 +301,6 @@ time, mark, audio, video {
 }
 #home__page .container__sphere {
   height: 0px;
-  height: 0;
 }
 #home__page .container__sphere .sphere {
   position: fixed;
@@ -184,21 +309,17 @@ time, mark, audio, video {
   z-index: -1;
   top: 37vh;
   height: 200px;
-  height: 12.5rem;
   width: 200px;
-  width: 12.5rem;
   border-radius: 50%;
   left: 0;
   right: 0;
   -webkit-animation: rotation 4s infinite linear, sphereGoToCenter 10s;
   box-shadow: inset 0 0 50px #fff, inset 20px 0 80px #f0f, inset -20px 0 80px #0ff, inset 20px 0 300px #f0f, inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px rgba(0, 255, 255, 0.438);
-  box-shadow: inset 0 0 3.125rem #fff, inset 1.25rem 0 5rem #f0f, inset -1.25rem 0 5rem #0ff, inset 1.25rem 0 18.75rem #f0f, inset -1.25rem 0 18.75rem #0ff, 0 0 3.125rem #fff, -0.625rem 0 5rem #f0f, 0.625rem 0 5rem rgba(0, 255, 255, 0.438);
 }
 #home__page .text__of__presentation {
   height: 100vh;
   color: white;
   font-size: 40px;
-  font-size: 2.5rem;
   width: 80%;
   margin: auto;
   display: flex;
@@ -215,31 +336,28 @@ time, mark, audio, video {
 #home__page .projects {
   height: 100vh;
   perspective: 2000px;
-  perspective: 125rem;
+  overflow: hidden;
 }
 #home__page .projects h3.title__project {
   position: relative;
   font-family: "Lemon/Milk";
   font-size: 62px;
-  font-size: 3.875rem;
   letter-spacing: 3px;
-  letter-spacing: 0.1875rem;
   top: 10px;
-  top: 0.625rem;
   width: 80%;
   margin: auto;
+  opacity: 0.5;
+  transform: translateX(150vw);
   transition: transform 3s, opacity 3s;
 }
 @media screen and (min-width: 400px) {
   #home__page .projects h3.title__project {
     letter-spacing: 10px;
-    letter-spacing: 0.625rem;
   }
 }
 #home__page .projects h3.title__project.transtision {
   opacity: 1;
   transform: translateX(0px);
-  transform: translateX(0);
 }
 #home__page .projects .project {
   display: flex;
@@ -254,11 +372,9 @@ time, mark, audio, video {
 #home__page .projects .project .illustration__of__project img {
   width: 40vh;
   max-width: 280px;
-  max-width: 17.5rem;
 }
 #home__page .projects .project h3 {
   font-size: 38px;
-  font-size: 2.375rem;
 }
 #home__page .projects .project h3.armani {
   color: #0757AA;
@@ -273,19 +389,132 @@ time, mark, audio, video {
 }
 #home__page .projects .project h4.type__of__project {
   font-size: 19px;
-  font-size: 1.1875rem;
   letter-spacing: 4px;
-  letter-spacing: 0.25rem;
+}
+#home__page .projects .nav__project {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: max-content;
+  font-size: 40px;
+  padding-top: 14vh;
+}
+#home__page .projects .nav__project section {
+  position: relative;
+  display: flex;
+  bottom: 0;
+  overflow: hidden;
+  z-index: -3;
+}
+#home__page .projects .nav__project section p {
+  display: inline-block;
+  z-index: -2;
+  transition-duration: 400ms;
+  width: 30px;
+}
+#home__page .projects .nav__project section p.trasition__back {
+  transform: translateX(30px);
+}
+#home__page .projects .nav__project section p.trasition__come {
+  transition-duration: 0ms;
+  transform: translateX(-30px);
+}
+#home__page .projects .nav__project section span {
+  background-color: black;
+  z-index: -1;
 }
 #home__page .sroll__barre {
   width: 100vw;
   background-color: white;
   height: 10px;
-  height: 0.625rem;
   position: fixed;
   transition-duration: 100ms;
   bottom: 0px;
-  bottom: 0;
+}
+
+#in__the__project .the__project {
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+#in__the__project .the__project .title__of__project {
+  display: block;
+  animation: enterLeft 5s;
+}
+#in__the__project .the__project .title__of__project h1 {
+  font-size: 38px;
+  font-family: "Lemon/Milk";
+  padding-top: 280px;
+  padding-bottom: 10px;
+}
+#in__the__project .the__project .title__of__project h1.armani {
+  color: #0757AA;
+  animation: blinkArmani 3.5s infinite alternate;
+}
+#in__the__project .the__project .title__of__project h1.so_comptoir {
+  color: jaune;
+  animation: blinkso_comptoir 3.5s infinite alternate;
+}
+#in__the__project .the__project .title__of__project h1.space_invaders {
+  animation: blinkInvaders 3.5s infinite alternate;
+}
+#in__the__project .the__project .title__of__project h2 {
+  font-size: 20px;
+  padding-bottom: 25px;
+  font-family: "Avenir LT Std";
+}
+#in__the__project .the__project .description {
+  display: flex;
+  animation: enterRight 1.5s;
+  max-width: 499px;
+  flex-wrap: wrap;
+}
+#in__the__project .the__project .description strong {
+  font-weight: 900;
+}
+#in__the__project .the__project .description p {
+  font-size: 20px;
+}
+#in__the__project .the__project .description .step {
+  line-height: 25px;
+}
+#in__the__project .the__project .description .button {
+  padding-top: 30px;
+}
+#in__the__project .the__project .description .button button {
+  margin-top: 15px;
+  margin: auto;
+  display: block;
+  font-family: "Avenir LT Std";
+  color: black;
+  font-size: 16px;
+  border: none;
+  padding: 15px 35px 15px 35px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+#in__the__project .the__project .description .description__skills ul {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  max-width: 499px;
+}
+#in__the__project .the__project .description .description__skills ul li {
+  font-weight: 900;
+  margin: 40px 0px 0px 0px;
+}
+#in__the__project .the__project .images {
+  display: contents;
+}
+#in__the__project .the__project .image {
+  padding-top: 20%;
+}
+#in__the__project .the__project .image h3 {
+  padding-bottom: 5px;
+}
+#in__the__project .the__project .image img {
+  width: 80vw;
+  max-width: 458px;
 }
 
 @media screen and (min-width: 800px) {
@@ -298,33 +527,25 @@ time, mark, audio, video {
   }
   #home__page .all__svg {
     height: 0px;
-    height: 0;
   }
   #home__page .all__svg .circlesWhite {
     left: 0vw;
     right: 0px;
-    right: 0;
     top: -300px;
-    top: -18.75rem;
     height: 170vh;
     max-height: 1371.88px;
-    max-height: 85.7425rem;
     width: 80vw;
     max-width: 1092.8px;
-    max-width: 68.3rem;
     transform-origin: center;
     animation: rotation 15s infinite;
   }
   #home__page .container__sphere {
     height: 0px;
-    height: 0;
   }
   #home__page .container__sphere .sphere {
     top: 30vh;
     height: 250px;
-    height: 15.625rem;
     width: 250px;
-    width: 15.625rem;
   }
 }
 @media screen and (min-width: 800px) and (min-height: 900px) {
@@ -335,17 +556,13 @@ time, mark, audio, video {
 @media screen and (min-width: 800px) {
   #home__page .text__of__presentation {
     letter-spacing: 5px;
-    letter-spacing: 0.3125rem;
   }
 }
 @media screen and (min-width: 800px) {
   #home__page .projects h3.title__project {
     font-size: 94px;
-    font-size: 5.875rem;
     top: 10px;
-    top: 0.625rem;
     letter-spacing: 17px;
-    letter-spacing: 1.0625rem;
   }
   #home__page .projects .project {
     height: 40%;
@@ -360,23 +577,62 @@ time, mark, audio, video {
   #home__page .projects .project .illustration__of__project img {
     width: 40vh;
     max-width: 780px;
-    max-width: 48.75rem;
   }
 }
 @media screen and (min-width: 800px) {
   #home__page .projects .project h3 {
     font-size: 90px;
-    font-size: 5.625rem;
   }
 }
 @media screen and (min-width: 800px) {
   #home__page .projects .project h4.type__of__project {
-    font-size: 28px;
-    font-size: 1.75rem;
-    letter-spacing: 0px;
-    letter-spacing: 0;
+    font-size: 18px;
+    letter-spacing: 0.25rem;
   }
 }
+#in__the__project .the__project strong {
+  font-weight: 900;
+}
+#in__the__project .the__project .title__of__project {
+  margin-top: -10vh;
+  animation: enterLeft 4s;
+}
+#in__the__project .the__project .title__of__project h1 {
+  font-size: 90px;
+  font-family: "Avenir LT Std";
+  font-weight: 900;
+  animation: 3.5s blinkArmani infinite alternate 2s;
+}
+#in__the__project .the__project .title__of__project h2 {
+  font-size: 20px;
+  font-family: "Avenir LT Std";
+  padding-bottom: 20px;
+}
+#in__the__project .the__project .title__of__project h2 strong {
+  letter-spacing: 2px;
+}
+#in__the__project .the__project .description {
+  padding-top: 2%;
+  max-width: 80vw;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-weight: 300;
+  line-height: 40px;
+}
+#in__the__project .the__project .description .description__text {
+  max-width: 604px;
+  padding-bottom: 20%;
+}
+#in__the__project .the__project .description p {
+  font-size: 20px;
+}
+#in__the__project .the__project .description .image {
+  padding-top: 0%;
+}
+#in__the__project .the__project .description .image img {
+  margin-bottom: 60px;
+}
+
 @font-face {
   font-family: "Avenir LT Std";
   src: url("/AvenirLTStd-BookOblique.2aa40d26.woff2") format("woff2"), url("/AvenirLTStd-BookOblique.b6b230ab.woff") format("woff");

@@ -1,7 +1,5 @@
-
 import { projects  } from './projects'; 
 
-console.log('ok');
 
 var numberProject = 0 ;
 
@@ -24,8 +22,8 @@ function renderChangeOfProject() {
   var tween = TweenLite.to(".circlesWhite", 15, 
   {css:{    
     animation: 'rotationCircle 15s infinite , retractation 4s forwards',
-
   }});  
+
   setTimeout(() => {
     var tween = TweenLite.to(".circlesWhite", 15, 
     {css:{    
@@ -50,10 +48,10 @@ var ChangeOfProjectView = function(project) {
 
     render: function() {
       this.a.href = `#hideenDiv`;
-      this.img.src = project.assets.pesentation;
+      this.img.src = project.image;
       view.a.appendChild(this.img);
       this.illustrationOfProject.appendChild(this.a);
-      this.titlOfProject.innerHTML = `<h3 class='${project.modifier}'>${project.title}</h3> <h4 class="type__of__projet" >${project.subTitle}</h4>`;
+      this.titlOfProject.innerHTML = `<h3 class='${project.modifier}'>${project.title}</h3> <h4 class="type__of__project" >${project.subTitle}</h4>`;
     },
   }
   
@@ -69,6 +67,25 @@ var ChangeOfProjectView = function(project) {
   view.render();
   return view
 }
+
+
+var renderNavProject = function (project){
+  
+  let nav = document.querySelector('.nav__project p');
+  // console.log(numberProject)
+  nav.classList.add('trasition__back');
+  setTimeout(()=>{
+    nav.innerHTML = "" ;
+    nav.className = "trasition__come";
+    setTimeout(()=>{
+      nav.innerHTML = numberProject + 1;
+      nav.className = "";
+    }, 200)
+  }, 400)
+
+}
+
+
 
 
 export { changeOfProject }

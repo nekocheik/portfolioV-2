@@ -51,8 +51,8 @@
           font-size: 90px;
         } 
         h4.type__of__project{
-          font-size: 28px;
-          letter-spacing: 0px;
+          font-size: 18px;
+          letter-spacing: .25rem;
         }
       }
     }
@@ -61,3 +61,7 @@
     // no modification
   }
 }
+
+///////// import parti hidden of the project //////////
+
+@import "./home_page__in__the__project__desktop.scss";

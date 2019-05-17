@@ -54,6 +54,7 @@
   .projects{
     height: 100vh;
     perspective: 2000px;
+    overflow: hidden;
     h3.title__project{
       position: relative;
       font-family: 'Lemon/Milk' ;
@@ -63,8 +64,8 @@
       width: 80%;
       margin: auto;
       
-      // opacity: 0.5;
-      // transform: translateX(150vw);
+      opacity: 0.5;
+      transform: translateX(150vw);
       
       @media screen and ( min-width : 400px) {
         letter-spacing: 10px;
@@ -85,7 +86,7 @@
       padding-top: 10%;
       justify-content: center;
       height: 80%;
-
+      
       .illustration__of__project img{
         width: 40vh;
         max-width: 280px;
@@ -109,6 +110,39 @@
         letter-spacing: 4px;
       }
     }
+    
+    .nav__project{
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      width: max-content;
+      font-size: 40px;
+      padding-top: 14vh;
+      
+      section{
+        position: relative;
+        display: flex;
+        bottom: 0;
+        overflow: hidden;
+        z-index: -3;
+        p{
+          display: inline-block;
+          z-index: -2;
+          transition-duration: 400ms ;
+          width: 30px;
+          &.trasition__back{
+            transform: translateX(30px)
+          }&.trasition__come{
+            transition-duration: 0ms ;
+            transform: translateX(-30px)
+          }
+        }
+        span{
+          background-color: black;
+          z-index: -1;
+        }
+      }
+    }
   }
   .sroll__barre{
     width: 100vw;
@@ -119,3 +153,5 @@
     bottom: 0px;
   } 
 }
+
+@import "./home_page__in__the__project.scss";
