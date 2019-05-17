@@ -786,7 +786,71 @@ var animation = function animation(params) {
 };
 
 exports.animation = animation;
-},{"../lib/viewPort":"js/lib/viewPort.js"}],"js/app.js":[function(require,module,exports) {
+},{"../lib/viewPort":"js/lib/viewPort.js"}],"js/function/menuBurger.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.menuBurger = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var menuBurger =
+/*#__PURE__*/
+function () {
+  function menuBurger() {
+    _classCallCheck(this, menuBurger);
+
+    // this.navMenu = document.querySelector('nav');
+    this.button = document.querySelector('.Menu__burger .croi');
+    this.sections = document.querySelectorAll('.Menu__burger li');
+    this.useMenu();
+  }
+
+  _createClass(menuBurger, [{
+    key: "useMenu",
+    value: function useMenu() {
+      var _this = this;
+
+      console.log(this.button);
+      var d = document.querySelector('body');
+      this.button.addEventListener('click', function (e) {
+        console.log(_this.button);
+
+        _this.sections.forEach(function (section) {
+          section.classList.toggle('active');
+        });
+
+        _this.button.classList.toggle('active');
+      });
+    }
+  }, {
+    key: "move",
+    value: function move() {
+      window.addEventListener('scroll', function (event) {
+        var p = nav.querySelector('p');
+
+        if (p.className === 'active') {
+          nav.classList.add('move');
+          var navLinks = document.querySelectorAll('nav a');
+          navLinks.forEach(function (link) {
+            link.classList.remove('active');
+          });
+        }
+      });
+    }
+  }]);
+
+  return menuBurger;
+}();
+
+exports.menuBurger = menuBurger;
+},{}],"js/app.js":[function(require,module,exports) {
 "use strict";
 
 var _cursor = require("./function/cursor");
@@ -801,11 +865,14 @@ var _animation = require("./animation/animation");
 
 var _page__projet = require("./projet/page__projet");
 
+var _menuBurger = require("./function/menuBurger");
+
 var srollPosition = new _scroll.SrollPosition(document.querySelector('.sroll__barre'));
 srollPosition.detectScroll();
 (0, _animation.animation)();
 (0, _page__projet.inTheProject)();
-},{"./function/cursor":"js/function/cursor.js","./lib/viewPort":"js/lib/viewPort.js","./function/scroll":"js/function/scroll.js","./projet/projetMV":"js/projet/projetMV.js","./animation/animation":"js/animation/animation.js","./projet/page__projet":"js/projet/page__projet.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+new _menuBurger.menuBurger();
+},{"./function/cursor":"js/function/cursor.js","./lib/viewPort":"js/lib/viewPort.js","./function/scroll":"js/function/scroll.js","./projet/projetMV":"js/projet/projetMV.js","./animation/animation":"js/animation/animation.js","./projet/page__projet":"js/projet/page__projet.js","./function/menuBurger":"js/function/menuBurger.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -833,7 +900,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60228" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50796" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

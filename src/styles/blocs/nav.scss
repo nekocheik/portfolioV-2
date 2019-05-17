@@ -1,55 +1,50 @@
 ////// menu burger mobile //////
-
-
 .Menu__burger{
-  @include hiddenViewport;
-  width: 0px;
-  
+  z-index: 10;
   position: fixed;
-
-  bottom: 130px;
-  right: 70px;
-
-  overflow: visible;
-  
-  .croi{
-    height: 30px;
-    display: block;
-    margin: auto;
-    transform: translateY(50px);
-    z-index: -2;
-    fill: black;
-    opacity: 0 ;
-    transition: opacity 0.6s , transform 1s ;
-    &.active{
-      transform: initial;
-      opacity: initial;
-      z-index: 10;
+  right: 10px;
+  bottom: 10px;
+  nav{
+    img{
+      height: 60px;
+      width: 40px;
+      margin: auto;
+      display: block;
+      transform: translateY(60px);
+      opacity: 0;
+      transition: opacity 60ms , transform 100ms ;
+      &.active{
+        transition: opacity 0.2s , transform 200ms ;
+        opacity: 1;
+        transform: translateY(10px);
+      }
     }
   }
-
-  p{
-    // pointer-events: none;
+  li{
     transition: font-size 0.3s , width 0.7s 0.4s  ;
-    z-index: 2;
+    border: solid rgb(255, 255, 255) 1px;
+    color: rgba(255, 255, 255, 0);
+    background-color: rgba(0, 0, 0, 0.527);
     font-size: 1px;
-    color: black;
-    border: 1px solid white;
-    margin: 2px;
-    padding-left: 45px;
-    padding-top: 6px;
-    background-color: rgba(0, 0, 0, 0.589);
-    width: 0vw;
+    display: block;
+    width: 50px;
+    height: 8px;
+    margin: 2px 0px 2px;
+    text-align: center;
+    margin: 5px 0px 5px;
+    transition: opacity 0.6s , font-size 0.5s , height  0.5s  , width 0.5s 0.5s ;
     &.active{
-      pointer-events: initial;
       transition: all 0.5s 0.4s ,font-size 0.5s 0.3s , width 0.5s  ;
-      font-size: initial;
-      color: white;
-      border: 1px solid white;
-      margin: 5px;
-      width: 92vw;
-      text-align: center;
-      padding: 5px;
+      justify-items: center;
+      border: solid rgb(255, 255, 255) 1px;
+      color: rgb(255, 255, 255);
+      background-color: rgba(0, 0, 0, 0.404);
+      padding: 4px 0px 4px 0px;
+      font-size: 16px;
+      display: block;
+      width: 94vw;
+      height: 15px;
+      margin: 10px 0px 10px;
     }
   }
 }
@@ -57,40 +52,47 @@
 ////// nav barre //////
 
 .Menu__burger{
+  right: 100px;
+  top : 35px;
   @media screen and ( min-width : 800px ) {
-    display : flex;
-    bottom : initial ;
-    top: 28px;
-    flex-direction: row;
-    right: 5vw;
-    justify-content: space-between;
-    height: initial;
-    width: 337px;
-    p{
-      font-size: 18px;
-      font-family: Avenir;
-      color: white;
-      border: none;
-      background-color: initial;
-      width: initial;
-      padding: initial;
-      display: inline;
-      &.active{
-        font-size: 18px;
-        border: none ;
-        margin: initial;
-        width: initial ;
-        text-align: initial;
-        padding: initial;
-      }
-    }.croi{
+    nav{
+      img{
         display: none;
         &.active{
-          display : none;
+          display: none;
         }
+      }
     }
-    &.move{
-      opacity: initial;
+    ul{
+      display: flex;
+      width: 350px;
+      justify-content: space-between;
+      li{
+        border: none;
+        color: white;
+        background-color: initial;
+        font-size: 18px;
+        display: block;
+        width: initial;
+        height: initial;
+        margin: initial;
+        &.active{
+          transition: all 0.5s 0.4s ,font-size 0.5s 0.3s , width 0.5s  ;
+          justify-items: center;
+          border: none;
+          color: white;
+          background-color: initial;
+          padding: initial;
+          font-size: 18px;
+          display: block;
+          width: initial;
+          height: initial;
+          margin: initial;
+        }
+      }
     }
+    
+    
+    
   }
 }
