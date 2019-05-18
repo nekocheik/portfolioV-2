@@ -12,9 +12,10 @@
       display: block;
       transform: translateY(60px);
       opacity: 0;
-      transition: opacity 60ms , transform 100ms ;
+      transition: opacity 60ms  ease-out 10ms , transform 100ms ;
+
       &.active{
-        transition: opacity 0.2s , transform 200ms ;
+        transition: opacity 0.3s ease-out 850ms , transform 100ms ease-out 900ms;
         opacity: 1;
         transform: translateY(10px);
       }
@@ -52,9 +53,9 @@
 ////// nav barre //////
 
 .Menu__burger{
-  right: 50px;
-  top : 35px;
   @media screen and ( min-width : 800px ) {
+    right: 50px;
+    top : 35px;
     nav{
       img{
         display: none;

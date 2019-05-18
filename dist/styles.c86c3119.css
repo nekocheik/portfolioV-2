@@ -255,10 +255,10 @@ body {
   transform: translateY(60px);
   transform: translateY(3.75rem);
   opacity: 0;
-  transition: opacity 60ms, transform 100ms;
+  transition: opacity 60ms ease-out 10ms, transform 100ms;
 }
 .Menu__burger nav img.active {
-  transition: opacity 0.2s, transform 200ms;
+  transition: opacity 0.3s ease-out 850ms, transform 100ms ease-out 900ms;
   opacity: 1;
   transform: translateY(10px);
   transform: translateY(0.625rem);
@@ -302,13 +302,13 @@ body {
   margin: 0.625rem 0 0.625rem;
 }
 
-.Menu__burger {
-  right: 50px;
-  right: 3.125rem;
-  top: 35px;
-  top: 2.1875rem;
-}
 @media screen and (min-width: 800px) {
+  .Menu__burger {
+    right: 50px;
+    right: 3.125rem;
+    top: 35px;
+    top: 2.1875rem;
+  }
   .Menu__burger nav img {
     display: none;
   }
@@ -795,12 +795,25 @@ body {
 }
 
 #about {
+  width: 100vw;
   overflow: hidden;
 }
 #about .circle__svg {
   height: 0px;
   height: 0;
   position: absolute;
+}
+#about .circlesWhite {
+  position: relative;
+  max-height: 800px;
+  max-height: 50rem;
+  width: 100%;
+  left: 0px;
+  left: 0;
+  right: 0px;
+  right: 0;
+  margin: 0px auto 0px auto 0px;
+  margin: 0 auto 0 auto 0;
 }
 #about main {
   display: flex;
@@ -850,6 +863,24 @@ body {
 #about .portrait__of__cheik {
   display: none;
 }
+#about .container__sphere {
+  z-index: -10;
+  height: 0px;
+  height: 0;
+  position: absolute;
+  top: 20%;
+  right: 8%;
+}
+#about .sphere {
+  -webkit-animation: rotation 4s infinite linear, sphereGoToCenter 10s;
+  box-shadow: inset 0 0 50px #fff, inset 20px 0 80px #f0f, inset -20px 0 80px #0ff, inset 20px 0 300px #f0f, inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px rgba(0, 255, 255, 0.438);
+  box-shadow: inset 0 0 3.125rem #fff, inset 1.25rem 0 5rem #f0f, inset -1.25rem 0 5rem #0ff, inset 1.25rem 0 18.75rem #f0f, inset -1.25rem 0 18.75rem #0ff, 0 0 3.125rem #fff, -0.625rem 0 5rem #f0f, 0.625rem 0 5rem rgba(0, 255, 255, 0.438);
+  border-radius: 100%;
+  width: 20px;
+  width: 1.25rem;
+  height: 20px;
+  height: 1.25rem;
+}
 #about button {
   margin: 30px auto auto auto;
   margin: 1.875rem auto auto auto;
@@ -872,8 +903,9 @@ body {
     right: -4%;
   }
   #about .circle__svg .circlesWhite {
-    height: 800px;
-    height: 50rem;
+    max-height: 800px;
+    max-height: 50rem;
+    width: 100%;
   }
 }
 @media screen and (min-width: 800px) and (min-height: 1000px) {
@@ -928,9 +960,6 @@ body {
 }
 @media screen and (min-width: 800px) {
   #about .sphere {
-    box-shadow: inset 0 0 50px #fff, inset 20px 0 80px #f0f, inset -20px 0 80px #0ff, inset 20px 0 300px #f0f, inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px rgba(0, 255, 255, 0.438);
-    box-shadow: inset 0 0 3.125rem #fff, inset 1.25rem 0 5rem #f0f, inset -1.25rem 0 5rem #0ff, inset 1.25rem 0 18.75rem #f0f, inset -1.25rem 0 18.75rem #0ff, 0 0 3.125rem #fff, -0.625rem 0 5rem #f0f, 0.625rem 0 5rem rgba(0, 255, 255, 0.438);
-    border-radius: 100%;
     width: 450px;
     width: 28.125rem;
     height: 450px;

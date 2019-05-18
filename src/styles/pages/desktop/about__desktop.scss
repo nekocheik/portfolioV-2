@@ -4,7 +4,8 @@
       top: 0%;
       right: -4%;
       .circlesWhite{
-        height: 800px;
+        max-height: 800px;
+        width: 100%;
       }
       @media screen and ( min-height : 1000px ) {
         right: -1%;
@@ -39,8 +40,6 @@
       right: 8%;
     }
     .sphere{
-      @include sphere ;
-      border-radius: 100%;
       width: 450px;
       height: 450px;
     }

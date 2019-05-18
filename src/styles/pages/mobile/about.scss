@@ -1,10 +1,18 @@
     
     #about{
+      width: 100vw;
+      overflow: hidden;
       .circle__svg{
         @include hiddenViewport ;
         position: absolute;
+      }.circlesWhite{
+        position: relative;
+        max-height: 800px;
+        width: 100%;
+        left: 0px;
+        right: 0px;
+        margin: 0px auto 0px auto 0px;
       }
-      overflow: hidden;
       main{
         display: flex;
         height: 100vh;
@@ -43,6 +51,20 @@
       }
       .portrait__of__cheik{
         display: none
+      } 
+      .container__sphere{
+        z-index: -10;
+        @include hiddenViewport ;
+        position: absolute;
+        top: 20%;
+        right: 8%;
+      }
+      .sphere{
+        -webkit-animation: rotation 4s infinite linear , sphereGoToCenter 10s ;
+        @include sphere ;
+        border-radius: 100%;
+        width: 20px;
+        height: 20px;
       }
       button{
         margin: 30px auto auto auto;
@@ -50,5 +72,5 @@
         @include button;
       }
     }
-
+    
     @import '../desktop/about__desktop.scss';
