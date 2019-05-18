@@ -1,0 +1,19 @@
+#galerie{
+  .grids__container{
+    @include hiddenViewport ;
+    position: absolute;
+    width: 100vw;
+    top: 35%;
+  }
+  .grids{
+    position: absolute;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 90%;
+    height: 1000vh;
+    z-index: -1;
+  }
+}
