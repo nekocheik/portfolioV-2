@@ -805,8 +805,8 @@ body {
 }
 #about .circlesWhite {
   position: relative;
-  max-height: 800px;
-  max-height: 50rem;
+  max-width: 800px;
+  max-width: 50rem;
   width: 100%;
   left: 0px;
   left: 0;
@@ -903,8 +903,8 @@ body {
     right: -4%;
   }
   #about .circle__svg .circlesWhite {
-    max-height: 800px;
-    max-height: 50rem;
+    height: 800px;
+    height: 50rem;
     width: 100%;
   }
 }
