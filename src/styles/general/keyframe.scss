@@ -12,7 +12,16 @@
     top: -150px;
   }
   to {
-    top: 200px;
+     top: 32.5vh;
+  }
+}
+
+@keyframes sphereGoToCenter1080 {
+  from{
+    top: -150px;
+  }
+  to {
+     top: 2.5vh;
   }
 }
 

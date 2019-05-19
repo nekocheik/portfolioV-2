@@ -36,8 +36,11 @@
     .container__sphere{
       @include hiddenViewport ;
       position: absolute;
-      top: 20%;
+      // top: 20%;
       right: 8%;
+      @media screen and ( width : 1900px){
+        -webkit-animation: rotation 4s infinite linear , sphereGoToCenter1080 10s ease-out forwards;
+      }
     }
     .sphere{
       width: 450px;

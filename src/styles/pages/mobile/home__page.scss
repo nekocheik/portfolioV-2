@@ -27,13 +27,14 @@
       display: block;
       margin: auto;
       z-index: -1;
-      top: 37vh;
+      // top: 37vh;
       height: 200px;
       width: 200px;
       border-radius: 50%;
       left: 0;
       right: 0;
-      -webkit-animation: rotation 4s infinite linear , sphereGoToCenter 10s ;
+      -webkit-animation: rotation 4s infinite linear , sphereGoToCenter 10s ease-out forwards;
+      // animation: name duration timing-function delay iteration-count direction fill-mode;
       @include sphere ;
     }
   }
