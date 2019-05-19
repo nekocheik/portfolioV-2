@@ -25,7 +25,6 @@ class ViewPort {
     window.addEventListener('scroll', (event)=>{
       this.screen.positionScreenBottom =  window.pageYOffset + window.innerHeight ;
       this.screen.positionScreenTop  =  window.pageYOffset ;
-      // console.log( this.body.top , this.screen.positionScreenTop  )
       if ( this.elementPartTouch  === 'top') {
         if (this.screenPartTouch  === 'bottom') {
           if ( this.body.top <= this.screen.positionScreenBottom ) {
@@ -42,7 +41,6 @@ class ViewPort {
         }
       }else{
         if ( this.screenPartTouch  === 'bottom') {
-          console.log( this.body.bottom , this.screen.positionScreenBottom )
           if ( this.body.bottom <= this.screen.positionScreenBottom ) {
             return callback(true)
           }else{

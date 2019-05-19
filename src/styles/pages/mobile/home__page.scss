@@ -1,5 +1,8 @@
 #home__page{
   @include body;
+  .logo{
+    z-index: 20;
+  }
   .all__svg{
     @include hiddenViewport;
     width: 100%;

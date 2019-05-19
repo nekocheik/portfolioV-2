@@ -14,3 +14,17 @@ inTheProject();
 
 new menuBurger()
   
+
+var scene = document.getElementById('projects');
+
+var parallaxInstance = new Parallax( scene , {
+  relativeInput: true 
+});
+
+// sceneTwo = document.querySelector('#sceneTwo');
+
+// console.log(scene)
+
+// var parallaxInstance = new Parallax( '#sceneTwo' , {
+//   relativeInput: true 
+// });

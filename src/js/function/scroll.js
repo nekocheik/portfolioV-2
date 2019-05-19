@@ -31,7 +31,7 @@ class SrollPosition  {
     this.checkInversionPosition()
     
     document.addEventListener("mousewheel", (event)=>{
-      if ( !this.checkBottomPage() || this.waitTime.waite && text__of__presentation.style.display === 'none' ) {
+      if ( !this.checkBottomPage() || this.waitTime.waite  ) {
         return
       }
       
@@ -79,7 +79,7 @@ class SrollPosition  {
       document.addEventListener('touchstart' , (evnt)=>{
         let startClientY = evnt.changedTouches[0].clientY ;
         document.addEventListener('touchmove' , (event)=>{
-          if (!this.checkBottomPage()) {
+          if (!this.checkBottomPage() || this.waitTime.waite  ) {
             return
           }
           

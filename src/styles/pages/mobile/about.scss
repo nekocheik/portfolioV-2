@@ -2,16 +2,21 @@
     #about{
       width: 100vw;
       overflow: hidden;
+      .logo{
+        z-index: 20;
+      }
       .circle__svg{
         @include hiddenViewport ;
         position: absolute;
       }.circlesWhite{
-        position: relative;
+        position: fixed;
         max-width: 800px;
         width: 100%;
+        top: -200px;
         left: 0px;
         right: 0px;
         margin: 0px auto 0px auto 0px;
+
       }
       main{
         display: flex;
@@ -56,15 +61,21 @@
         z-index: -10;
         @include hiddenViewport ;
         position: absolute;
-        top: 20%;
-        right: 8%;
+        top: -20%;
+        right: 0;
+        left: 0;
       }
       .sphere{
         -webkit-animation: rotation 4s infinite linear , sphereGoToCenter 10s ;
         @include sphere ;
         border-radius: 100%;
-        width: 20px;
-        height: 20px;
+        height: 200px;
+        width: 200px;
+
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
       }
       button{
         margin: 30px auto auto auto;

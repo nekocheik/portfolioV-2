@@ -164,7 +164,7 @@ function () {
 
       window.addEventListener('scroll', function (event) {
         _this.screen.positionScreenBottom = window.pageYOffset + window.innerHeight;
-        _this.screen.positionScreenTop = window.pageYOffset; // console.log( this.body.top , this.screen.positionScreenTop  )
+        _this.screen.positionScreenTop = window.pageYOffset;
 
         if (_this.elementPartTouch === 'top') {
           if (_this.screenPartTouch === 'bottom') {
@@ -182,8 +182,6 @@ function () {
           }
         } else {
           if (_this.screenPartTouch === 'bottom') {
-            console.log(_this.body.bottom, _this.screen.positionScreenBottom);
-
             if (_this.body.bottom <= _this.screen.positionScreenBottom) {
               return callback(true);
             } else {
@@ -602,7 +600,7 @@ function () {
       this.detectSwipe();
       this.checkInversionPosition();
       document.addEventListener("mousewheel", function (event) {
-        if (!_this2.checkBottomPage() || _this2.waitTime.waite && text__of__presentation.style.display === 'none') {
+        if (!_this2.checkBottomPage() || _this2.waitTime.waite) {
           return;
         }
 
@@ -652,7 +650,7 @@ function () {
       document.addEventListener('touchstart', function (evnt) {
         var startClientY = evnt.changedTouches[0].clientY;
         document.addEventListener('touchmove', function (event) {
-          if (!_this3.checkBottomPage()) {
+          if (!_this3.checkBottomPage() || _this3.waitTime.waite) {
             return;
           }
 
@@ -872,6 +870,14 @@ srollPosition.detectScroll();
 (0, _animation.animation)();
 (0, _page__projet.inTheProject)();
 new _menuBurger.menuBurger();
+var scene = document.getElementById('projects');
+var parallaxInstance = new Parallax(scene, {
+  relativeInput: true
+}); // sceneTwo = document.querySelector('#sceneTwo');
+// console.log(scene)
+// var parallaxInstance = new Parallax( '#sceneTwo' , {
+//   relativeInput: true 
+// });
 },{"./function/cursor":"js/function/cursor.js","./lib/viewPort":"js/lib/viewPort.js","./function/scroll":"js/function/scroll.js","./projet/projetMV":"js/projet/projetMV.js","./animation/animation":"js/animation/animation.js","./projet/page__projet":"js/projet/page__projet.js","./function/menuBurger":"js/function/menuBurger.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -900,7 +906,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54390" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57124" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
