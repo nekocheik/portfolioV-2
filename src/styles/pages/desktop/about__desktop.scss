@@ -1,15 +1,15 @@
 #about{
   @media screen and ( min-width : 800px ) {
     .circle__svg{
-      top: 0%;
-      right: -4%;
       .circlesWhite{
         height: 800px;
         width: initial;
-      }
-      @media screen and ( min-height : 1000px ) {
-        right: -1%;
-        top: 5%;
+        left: 48%;
+        top: -10%;
+        @media screen and ( min-height : 1000px ) {
+          left: 51%;
+          top: -5%;
+        }
       }
     }
     .part__about{
@@ -32,23 +32,30 @@
       position: relative;
       margin-left: -300px;
       margin-top: -400px;
+      @media screen and ( min-height : 1000px ) {
+      height: 1000px;
+      margin-top: -600px;
+      }
     }
     .container__sphere{
       @include hiddenViewport ;
       position: absolute;
-      // top: 20%;
-      right: 8%;
-      @media screen and ( width : 1900px){
-        -webkit-animation: rotation 4s infinite linear , sphereGoToCenter1080 10s ease-out forwards;
+      top: 10%;
+      left: 60%;
+      // @media screen and ( width : 1900px){
+        //   -webkit-animation: rotation 4s infinite linear , sphereGoToCenter1080 10s ease-out forwards;
+        // }
+      }
+      .sphere{
+        margin-left: initial;
+        margin-right: initial;
+        position: absolute;
+        width: 450px;
+        height: 450px;
+      }
+      .contact{
+        margin-top: 10vh;
+        max-width: 564px;
       }
     }
-    .sphere{
-      width: 450px;
-      height: 450px;
-    }
-    .contact{
-      margin-top: 10vh;
-      max-width: 564px;
-    }
   }
-}

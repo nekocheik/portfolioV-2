@@ -883,12 +883,11 @@ body {
   height: 0px;
   height: 0;
   position: absolute;
-  top: -20%;
+  top: -10%;
   right: 0;
   left: 0;
 }
 #about .sphere {
-  -webkit-animation: rotation 4s infinite linear, sphereGoToCenter 10s;
   box-shadow: inset 0 0 50px #fff, inset 20px 0 80px #f0f, inset -20px 0 80px #0ff, inset 20px 0 300px #f0f, inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px rgba(0, 255, 255, 0.438);
   box-shadow: inset 0 0 3.125rem #fff, inset 1.25rem 0 5rem #f0f, inset -1.25rem 0 5rem #0ff, inset 1.25rem 0 18.75rem #f0f, inset -1.25rem 0 18.75rem #0ff, 0 0 3.125rem #fff, -0.625rem 0 5rem #f0f, 0.625rem 0 5rem rgba(0, 255, 255, 0.438);
   border-radius: 100%;
@@ -918,20 +917,18 @@ body {
 }
 
 @media screen and (min-width: 800px) {
-  #about .circle__svg {
-    top: 0%;
-    right: -4%;
-  }
   #about .circle__svg .circlesWhite {
     height: 800px;
     height: 50rem;
     width: initial;
+    left: 48%;
+    top: -10%;
   }
 }
 @media screen and (min-width: 800px) and (min-height: 1000px) {
-  #about .circle__svg {
-    right: -1%;
-    top: 5%;
+  #about .circle__svg .circlesWhite {
+    left: 51%;
+    top: -5%;
   }
 }
 @media screen and (min-width: 800px) {
@@ -969,21 +966,28 @@ body {
     margin-top: -25rem;
   }
 }
+@media screen and (min-width: 800px) and (min-height: 1000px) {
+  #about .portrait__of__cheik {
+    height: 1000px;
+    height: 62.5rem;
+    margin-top: -600px;
+    margin-top: -37.5rem;
+  }
+}
 @media screen and (min-width: 800px) {
   #about .container__sphere {
     height: 0px;
     height: 0;
     position: absolute;
-    right: 8%;
-  }
-}
-@media screen and (min-width: 800px) and (width: 1900px) {
-  #about .container__sphere {
-    -webkit-animation: rotation 4s infinite linear, sphereGoToCenter1080 10s ease-out forwards;
+    top: 10%;
+    left: 60%;
   }
 }
 @media screen and (min-width: 800px) {
   #about .sphere {
+    margin-left: initial;
+    margin-right: initial;
+    position: absolute;
     width: 450px;
     width: 28.125rem;
     height: 450px;
