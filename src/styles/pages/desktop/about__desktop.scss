@@ -17,6 +17,8 @@
       margin-left: initial;
       margin: auto;
       padding-right: 25vw;
+    }.about__text{
+      max-width: 764px;
     }
     h1{
       font-size: 94px;
@@ -54,7 +56,7 @@
         height: 450px;
       }
       .contact{
-        margin-top: 10vh;
+        margin-top: 5vh;
         max-width: 564px;
       }
     }
