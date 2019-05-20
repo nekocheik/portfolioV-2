@@ -865,6 +865,16 @@ var _page__projet = require("./projet/page__projet");
 
 var _menuBurger = require("./function/menuBurger");
 
+var images = new Array();
+
+function preload() {
+  for (var i = 0; i < 3; i++) {
+    images[i] = new Image();
+    images[i].src = preload[i];
+  }
+}
+
+preload('../../assets/images/présentation_project/MontreConnecter.1.svg', '../../assets/images/présentation_project/logoSocomptoir.svg', '../../assets/images/présentation_project/alien.svg');
 var srollPosition = new _scroll.SrollPosition(document.querySelector('.sroll__barre'));
 srollPosition.detectScroll();
 (0, _animation.animation)();
@@ -873,11 +883,7 @@ new _menuBurger.menuBurger();
 var scene = document.getElementById('projects');
 var parallaxInstance = new Parallax(scene, {
   relativeInput: true
-}); // sceneTwo = document.querySelector('#sceneTwo');
-// console.log(scene)
-// var parallaxInstance = new Parallax( '#sceneTwo' , {
-//   relativeInput: true 
-// });
+});
 },{"./function/cursor":"js/function/cursor.js","./lib/viewPort":"js/lib/viewPort.js","./function/scroll":"js/function/scroll.js","./projet/projetMV":"js/projet/projetMV.js","./animation/animation":"js/animation/animation.js","./projet/page__projet":"js/projet/page__projet.js","./function/menuBurger":"js/function/menuBurger.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -906,7 +912,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53896" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51650" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
