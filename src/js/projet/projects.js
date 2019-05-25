@@ -28,6 +28,15 @@ var projects = [
     image : require('../../assets/images/présentation_project/alien.svg'),
     button : 'JOUER AU JEU' ,
     modifier : 'space_invaders'
+  },{
+    title : 'Portfolio',
+    type : 'Projet personnel' ,
+    numberProject : '4',
+    subTitle : 'Projet : intégration',
+    skills : ['JavaScript' , 'Canvas' , 'Html' , 'Sass'] ,
+    image : require('../../assets/images/icons/logo.svg'),
+    button : 'JOUER AU JEU' ,
+    modifier : 'space_invaders'
   }
 ]
 

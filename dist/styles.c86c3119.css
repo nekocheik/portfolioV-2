@@ -223,10 +223,19 @@ body {
     transform: scale(1, 1) rotate(1turn);
   }
 }
+@keyframes enlargement {
+  to {
+    transform: scale(1);
+  }
+  from {
+    transform: scale(0.4);
+  }
+}
 .cursor {
   position: absolute;
   z-index: 10;
   pointer-events: none;
+  z-index: 100;
 }
 .cursor__Two {
   transition-duration: transform 100ms;
@@ -366,7 +375,7 @@ body {
   left: 15px;
   left: 0.9375rem;
   position: fixed;
-  opacity: 0.3;
+  opacity: 0.8;
 }
 
 .text {
@@ -438,6 +447,11 @@ body {
 }
 #home__page .text__of__presentation h2 {
   padding-bottom: 30vh;
+}
+#home__page #projects {
+  position: relative;
+  top: -10px;
+  top: -0.625rem;
 }
 #home__page .projects {
   height: 100vh;
@@ -514,7 +528,6 @@ body {
   width: max-content;
   font-size: 40px;
   font-size: 2.5rem;
-  padding-top: 14vh;
   font-weight: 100;
 }
 #home__page .projects .nav__project section {
@@ -750,6 +763,11 @@ body {
   }
 }
 @media screen and (min-width: 800px) {
+  #home__page .projects .nav__project {
+    padding-top: 14vh;
+  }
+}
+@media screen and (min-width: 800px) {
   #in__the__project .the__project strong {
     font-weight: 900;
   }
@@ -806,7 +824,7 @@ body {
 
 #about {
   width: 100vw;
-  overflow: hidden;
+  overflow: initial;
 }
 #about .logo {
   z-index: 20;
@@ -831,12 +849,16 @@ body {
   margin: 0 auto 0 auto 0;
 }
 #about main {
+  overflow: initial;
   display: flex;
   height: 100vh;
   width: 100%;
-  overflow: hidden;
+}
+#about main strong {
+  font-weight: 800;
 }
 #about .part__about {
+  animation: enterRight 4s ease-out forwards;
   margin-top: 20%;
   margin-left: 10%;
 }
@@ -888,6 +910,7 @@ body {
   left: 0;
 }
 #about .sphere {
+  -webkit-animation: rotation 4s infinite linear enlargement 4s;
   box-shadow: inset 0 0 50px #fff, inset 20px 0 80px #f0f, inset -20px 0 80px #0ff, inset 20px 0 300px #f0f, inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px rgba(0, 255, 255, 0.438);
   box-shadow: inset 0 0 3.125rem #fff, inset 1.25rem 0 5rem #f0f, inset -1.25rem 0 5rem #0ff, inset 1.25rem 0 18.75rem #f0f, inset -1.25rem 0 18.75rem #0ff, 0 0 3.125rem #fff, -0.625rem 0 5rem #f0f, 0.625rem 0 5rem rgba(0, 255, 255, 0.438);
   border-radius: 100%;
@@ -917,7 +940,14 @@ body {
 }
 
 @media screen and (min-width: 800px) {
+  #about {
+    overflow: hidden;
+  }
+  #about main {
+    overflow: hidden;
+  }
   #about .circle__svg .circlesWhite {
+    animation: rotation 10s infinite 4s;
     height: 800px;
     height: 50rem;
     width: initial;
@@ -943,14 +973,17 @@ body {
   #about .about__text {
     max-width: 764px;
     max-width: 47.75rem;
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-weight: 100;
   }
 }
 @media screen and (min-width: 800px) {
   #about h1 {
     font-size: 94px;
     font-size: 5.875rem;
-    letter-spacing: 20px;
-    letter-spacing: 1.25rem;
+    letter-spacing: 10px;
+    letter-spacing: 0.625rem;
   }
 }
 @media screen and (min-width: 800px) {
@@ -974,10 +1007,13 @@ body {
 }
 @media screen and (min-width: 800px) and (min-height: 1000px) {
   #about .portrait__of__cheik {
-    height: 1000px;
-    height: 62.5rem;
-    margin-top: -600px;
-    margin-top: -37.5rem;
+    position: relative;
+    left: -100px;
+    left: -6.25rem;
+    height: 700px;
+    height: 43.75rem;
+    margin-top: -400px;
+    margin-top: -25rem;
   }
 }
 @media screen and (min-width: 800px) {
@@ -989,6 +1025,11 @@ body {
     left: 60%;
   }
 }
+@media screen and (min-width: 800px) and (width: 1900px) {
+  #about .container__sphere {
+    -webkit-animation: rotation 4s infinite linear, sphereGoToCenter1080 10s ease-out forwards;
+  }
+}
 @media screen and (min-width: 800px) {
   #about .sphere {
     margin-left: initial;
@@ -998,6 +1039,7 @@ body {
     width: 28.125rem;
     height: 450px;
     height: 28.125rem;
+    animation: enlargement 3s;
   }
 }
 @media screen and (min-width: 800px) {
@@ -1006,6 +1048,17 @@ body {
     max-width: 564px;
     max-width: 35.25rem;
   }
+}
+#about #Ellipse_14 {
+  stroke-dasharray: 2760px;
+  stroke-dasharray: 172.5rem;
+  stroke-dashoffset: 2760px;
+  stroke-dashoffset: 172.5rem;
+  animation: write 3s forwards;
+}
+#about #Ellipse_15 {
+  stroke-dasharray: 31px;
+  stroke-dasharray: 1.9375rem;
 }
 
 #galerie .grids__container {

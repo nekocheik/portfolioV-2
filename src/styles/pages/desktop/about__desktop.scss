@@ -1,7 +1,12 @@
 #about{
   @media screen and ( min-width : 800px ) {
+    overflow: hidden;
+    main{
+      overflow: hidden;
+    }
     .circle__svg{
       .circlesWhite{
+        animation: rotation 10s infinite 4s;
         height: 800px;
         width: initial;
         left: 48%;
@@ -19,10 +24,12 @@
       padding-right: 25vw;
     }.about__text{
       max-width: 764px;
+      font-size: 18px;
+      font-weight: 100;
     }
     h1{
       font-size: 94px;
-      letter-spacing: 20px;
+      letter-spacing: 10px;
     }.portrait{
       @include hiddenViewport;
       position: absolute;
@@ -35,8 +42,10 @@
       margin-left: -300px;
       margin-top: -400px;
       @media screen and ( min-height : 1000px ) {
-      height: 1000px;
-      margin-top: -600px;
+      position: relative;
+      left: -100px;
+      height: 700px;
+      margin-top: -400px;
       }
     }
     .container__sphere{
@@ -44,9 +53,9 @@
       position: absolute;
       top: 10%;
       left: 60%;
-      // @media screen and ( width : 1900px){
-        //   -webkit-animation: rotation 4s infinite linear , sphereGoToCenter1080 10s ease-out forwards;
-        // }
+      @media screen and ( width : 1900px){
+          -webkit-animation: rotation 4s infinite linear , sphereGoToCenter1080 10s ease-out forwards;
+        }
       }
       .sphere{
         margin-left: initial;
@@ -54,10 +63,22 @@
         position: absolute;
         width: 450px;
         height: 450px;
+        animation: enlargement 3s  ;
       }
       .contact{
         margin-top: 5vh;
         max-width: 564px;
       }
+    }
+
+    #Ellipse_14{
+      stroke-dasharray: 2760px;
+      stroke-dashoffset: 2760px;
+      animation: write 3s forwards ;
+    }#Ellipse_15{
+      stroke-dasharray: 31px;
+      // animation: name duration timing-function delay iteration-count direction fill-mode;
+      // stroke-dashoffset: 1991px;
+      // animation: write 3s forwards ;
     }
   }

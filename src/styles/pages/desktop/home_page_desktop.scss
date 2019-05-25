@@ -27,7 +27,6 @@
       }
     }
     .text__of__presentation{
-
       letter-spacing: 5px;
     }
     .projects{
@@ -41,7 +40,6 @@
         @media screen and (min-height : 900px) {
         height: 50%;
       }
-        
         .illustration__of__project img{
           width: 40vh;
           max-width: 780px;
@@ -53,6 +51,9 @@
           font-size: 18px;
           letter-spacing: .25rem;
         }
+      }
+      .nav__project{
+        padding-top: 14vh;
       }
     }
   }

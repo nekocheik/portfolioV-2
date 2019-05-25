@@ -26,7 +26,6 @@ class SrollPosition  {
 
   detectScroll(){
     this.element.style.transform = `translateX( ${this.positionX}vw)`;
-    // this.inversionPosition();
     this.detectSwipe();
     this.checkInversionPosition()
     
@@ -67,6 +66,7 @@ class SrollPosition  {
 
         this.element.style.transform = `translateX( ${this.positionX}vw)`;
         this.projecTransform3d();
+        this.checkInversionPosition(this.positionX)
         this.inversion = true;
       }
     })};

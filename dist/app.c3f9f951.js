@@ -339,6 +339,8 @@ module.exports = "/MontreConnecter.1.b29c4f11.svg";
 module.exports = "/logoSocomptoir.bebc752a.svg";
 },{}],"assets/images/présentation_project/alien.svg":[function(require,module,exports) {
 module.exports = "/alien.fcbdf785.svg";
+},{}],"assets/images/icons/logo.svg":[function(require,module,exports) {
+module.exports = "/logo.bd55cb89.svg";
 },{}],"js/projet/projects.js":[function(require,module,exports) {
 "use strict";
 
@@ -373,9 +375,18 @@ var projects = [{
   image: require('../../assets/images/présentation_project/alien.svg'),
   button: 'JOUER AU JEU',
   modifier: 'space_invaders'
+}, {
+  title: 'Portfolio',
+  type: 'Projet personnel',
+  numberProject: '4',
+  subTitle: 'Projet : intégration',
+  skills: ['JavaScript', 'Canvas', 'Html', 'Sass'],
+  image: require('../../assets/images/icons/logo.svg'),
+  button: 'JOUER AU JEU',
+  modifier: 'space_invaders'
 }];
 exports.projects = projects;
-},{"../../assets/images/présentation_project/MontreConnecter.1.svg":"assets/images/présentation_project/MontreConnecter.1.svg","../../assets/images/présentation_project/logoSocomptoir.svg":"assets/images/présentation_project/logoSocomptoir.svg","../../assets/images/présentation_project/alien.svg":"assets/images/présentation_project/alien.svg"}],"js/projet/page__projet.js":[function(require,module,exports) {
+},{"../../assets/images/présentation_project/MontreConnecter.1.svg":"assets/images/présentation_project/MontreConnecter.1.svg","../../assets/images/présentation_project/logoSocomptoir.svg":"assets/images/présentation_project/logoSocomptoir.svg","../../assets/images/présentation_project/alien.svg":"assets/images/présentation_project/alien.svg","../../assets/images/icons/logo.svg":"assets/images/icons/logo.svg"}],"js/projet/page__projet.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -595,8 +606,7 @@ function () {
     value: function detectScroll() {
       var _this2 = this;
 
-      this.element.style.transform = "translateX( ".concat(this.positionX, "vw)"); // this.inversionPosition();
-
+      this.element.style.transform = "translateX( ".concat(this.positionX, "vw)");
       this.detectSwipe();
       this.checkInversionPosition();
       document.addEventListener("mousewheel", function (event) {
@@ -637,6 +647,8 @@ function () {
           _this2.element.style.transform = "translateX( ".concat(_this2.positionX, "vw)");
 
           _this2.projecTransform3d();
+
+          _this2.checkInversionPosition(_this2.positionX);
 
           _this2.inversion = true;
         }
@@ -865,6 +877,7 @@ var _page__projet = require("./projet/page__projet");
 
 var _menuBurger = require("./function/menuBurger");
 
+//  préload Image 
 var images = new Array();
 
 function preload() {
@@ -912,7 +925,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51650" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56051" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

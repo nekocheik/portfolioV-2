@@ -136,3 +136,12 @@
     transform: scale( 1 , 1 ) rotate( 1turn );
   }
 }
+
+@keyframes enlargement {
+  to{
+    transform: scale( 1 );
+  }
+  from{
+    transform: scale( 0.4 );
+  }
+}
