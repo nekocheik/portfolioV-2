@@ -240,14 +240,6 @@ body {
   pointer-events: none;
   z-index: 100;
 }
-.cursor__Two {
-  transition-duration: transform 100ms;
-}
-
-.cursor__one {
-  transition-duration: transform 100ms;
-}
-
 body {
   cursor: none;
 }
@@ -328,6 +320,8 @@ body {
     right: 3.125rem;
     top: 35px;
     top: 2.1875rem;
+    height: 20px;
+    height: 1.25rem;
   }
   .Menu__burger nav img {
     display: none;
@@ -560,6 +554,30 @@ body {
   background-color: black;
   z-index: -1;
 }
+#home__page .buttons__next__precedent {
+  margin: auto;
+  width: 50vw;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  top: -50px;
+  top: -3.125rem;
+}
+#home__page .buttons__next__precedent .button {
+  display: none;
+}
+#home__page .buttons__next__precedent .button__precedent.active {
+  display: initial;
+}
+#home__page .buttons__next__precedent .button__precedent.visible {
+  display: initial;
+}
+#home__page .buttons__next__precedent .buttons__next.active {
+  display: initial;
+}
+#home__page .buttons__next__precedent .buttons__next.visible {
+  display: initial;
+}
 #home__page .sroll__barre {
   width: 100vw;
   background-color: white;
@@ -571,6 +589,10 @@ body {
   bottom: 0;
 }
 
+#in__the__project {
+  height: 0px;
+  height: 0;
+}
 #in__the__project .the__project {
   width: 80%;
   display: block;

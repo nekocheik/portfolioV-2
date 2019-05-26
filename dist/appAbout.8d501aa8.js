@@ -255,19 +255,17 @@ function () {
         _this.x = event.clientX - _this.element.getBoundingClientRect().width / 2;
         _this.y = window.pageYOffset + event.clientY - _this.element.getBoundingClientRect().height / 2;
 
-        _this.giveMemoXY();
+        _this.giveMemoXY(); // if ( this.memoX > this.x ) {
+        //   this.scaleX++ ;
+        // }else{
+        //   this.scaleX-- ;
+        // }
+        // if ( this.memoY > this.y ) {
+        //   this.scaleY++ ;
+        // }else{
+        //   this.scaleY-- ;
+        // }
 
-        if (_this.memoX > _this.x) {
-          _this.scaleX++;
-        } else {
-          _this.scaleX--;
-        }
-
-        if (_this.memoY > _this.y) {
-          _this.scaleY++;
-        } else {
-          _this.scaleY--;
-        }
 
         _this.element.style.left = "".concat(_this.x, "px");
         _this.element.style.top = "".concat(_this.y, "px");
@@ -292,21 +290,18 @@ function () {
     value: function clearDeformatiom() {
       var _this2 = this;
 
-      setInterval(function () {
-        if (_this2.scaleY < 0) {
-          _this2.scaleY++;
-        } else {
-          _this2.scaleY--;
-        }
-
-        if (_this2.scaleX < 0) {
-          _this2.scaleX++;
-        } else {
-          _this2.scaleX--;
-        }
+      setInterval(function () {// if ( this.scaleY  < 0 ) {
+        //   this.scaleY++ ;
+        // }else{
+        //   this.scaleY--;
+        // }
+        // if (this.scaleX < 0 ) {
+        //   this.scaleX++ ;
+        // }else{
+        //   this.scaleX-- ;
+        // }
       }, 25);
-      setInterval(function () {
-        _this2.element.style.transform = "skew(".concat(_this2.scaleX, "deg , ").concat(_this2.scaleY, "deg)");
+      setInterval(function () {// this.element.style.transform = `skew(${ this.scaleX }deg , ${this.scaleY }deg)`
       }, 30);
       setInterval(function () {
         _this2.memoX = _this2.x;
@@ -332,7 +327,7 @@ var cursor = function cursor() {
 };
 
 exports.cursor = cursor;
-cursor();
+cursor(); /////
 },{"../lib/viewPort":"js/lib/viewPort.js"}],"js/function/menuBurger.js":[function(require,module,exports) {
 "use strict";
 
@@ -433,7 +428,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63291" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54164" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

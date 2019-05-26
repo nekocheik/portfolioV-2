@@ -149,6 +149,33 @@
       }
     }
   }
+  .buttons__next__precedent{
+    margin: auto;
+    width: 50vw;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: -50px;
+    .button{
+      display: none;
+    }
+    .button__precedent{
+      &.active{
+        display: initial;
+      }
+      &.visible{
+        display: initial;
+      }
+    }.buttons__next{
+      &.active{
+        display: initial;
+      }
+      &.visible{
+        display: initial;
+      }
+    }
+
+  }
   .sroll__barre{
     width: 100vw;
     background-color: white;

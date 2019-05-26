@@ -3,20 +3,30 @@ import { inTheProject } from '../projet/page__projet'
 
 var numberProject = 0 ;
 
-function changeOfProject() {
-  renderChangeOfProject();
+function changeOfProject(value) {
+  renderChangeOfProject(value);
 }
 
-function renderChangeOfProject() {
+function renderChangeOfProject(value) {
   
   
   
   var project = document.querySelector('#home__page .project')
   project.innerHTML = "";
   numberProject++;
-  
+
+    
+  if (value || value === 0 ) {
+    numberProject = value ;
+    console.log('is true')
+  }
+
   if ( numberProject > projects.length - 1) {
     numberProject = 0
+  }
+
+  if ( numberProject < 0 ) {
+    numberProject =  3;
   }
   
   var tween = TweenLite.to(".circlesWhite", 15, 
@@ -61,6 +71,10 @@ var ChangeOfProjectView = function(project) {
   
   
   view.illustrationOfProject.addEventListener('click', ()=>{
+    let precedent = document.querySelector('.button__precedent');
+    let next = document.querySelector('.button__next');
+    next.className = "button__next visible";
+    precedent.className = "button__precedent visible";
     inTheProject()
   })
   

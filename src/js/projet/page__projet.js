@@ -7,6 +7,11 @@ function inTheProject() {
   project.addEventListener('click', ()=>{
     Theproject();
     
+    let precedent = document.querySelector('.button__precedent');
+    let next = document.querySelector('.button__next');
+    next.className = "button__next visible";
+    precedent.className = "button__precedent visible";
+
     mainHidden.forEach(element => {
       element.style.display = "none";
     });

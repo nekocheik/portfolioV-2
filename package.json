@@ -10,8 +10,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "detect-browser": "^4.5.0",
     "parcel": "^1.12.3",
     "postcss-pxtorem": "^4.0.1",
     "sass": "^1.20.1"
-  }
+  },
+  "dependencies": {}
 }
