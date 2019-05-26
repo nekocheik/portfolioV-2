@@ -10,24 +10,25 @@ import { menuBurger } from "./function/menuBurger";
 
 //  préload Image 
 
-var images = new Array()
-function preload() {
-  for ( let i = 0; i < 3 ; i++) {
-    images[i] = new Image()
-    images[i].src = preload[i]
-  }
-}
-
-preload(
-  '../../assets/images/présentation_project/MontreConnecter.1.svg',
-  '../../assets/images/présentation_project/logoSocomptoir.svg' ,
-  '../../assets/images/présentation_project/alien.svg'
-)
-
 let srollPosition = new SrollPosition(document.querySelector('.sroll__barre'))
 srollPosition.detectScroll();
 animation();
 inTheProject();
+
+var preload = require('../assets/images/présentation_project/*.svg');
+
+// function preloader( Image ) {
+// var preloadLink = document.createElement("link");
+// preloadLink.rel = "preload";
+// preloadLink.as = "image";
+// preloadLink.href = "Image";
+// document.head.appendChild(preloadLink);
+// }
+
+// preloader( preload.alien );
+// preloader( preload.MontreConnecter1 )
+// preloader( preload.logoSocomptoir )
+
 
 new menuBurger()
   

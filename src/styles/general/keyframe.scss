@@ -26,10 +26,14 @@
 }
 
 @keyframes rotationCircle {
-  100% {
-    transform: rotate( 1turn );
+  to{
+    transform: rotate( 1turn );;
+  }
+  from{
+    transform: rotate( 0turn );
   }
 }
+
 
 
 

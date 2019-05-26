@@ -333,8 +333,8 @@ var cursor = function cursor() {
 
 exports.cursor = cursor;
 cursor();
-},{"../lib/viewPort":"js/lib/viewPort.js"}],"assets/images/présentation_project/MontreConnecter.1.svg":[function(require,module,exports) {
-module.exports = "/MontreConnecter.1.b29c4f11.svg";
+},{"../lib/viewPort":"js/lib/viewPort.js"}],"assets/images/présentation_project/MontreConnecter1.svg":[function(require,module,exports) {
+module.exports = "/MontreConnecter1.60a596f1.svg";
 },{}],"assets/images/présentation_project/logoSocomptoir.svg":[function(require,module,exports) {
 module.exports = "/logoSocomptoir.bebc752a.svg";
 },{}],"assets/images/présentation_project/alien.svg":[function(require,module,exports) {
@@ -354,7 +354,7 @@ var projects = [{
   numberProject: '1',
   subTitle: 'Projet : intégration',
   skills: ['xd', 'JavaScript', 'Rellax', 'Html', 'Sass'],
-  image: require('../../assets/images/présentation_project/MontreConnecter.1.svg'),
+  image: require('../../assets/images/présentation_project/MontreConnecter1.svg'),
   button: 'VISITER LE SITE',
   modifier: 'armani'
 }, {
@@ -386,7 +386,7 @@ var projects = [{
   modifier: 'space_invaders'
 }];
 exports.projects = projects;
-},{"../../assets/images/présentation_project/MontreConnecter.1.svg":"assets/images/présentation_project/MontreConnecter.1.svg","../../assets/images/présentation_project/logoSocomptoir.svg":"assets/images/présentation_project/logoSocomptoir.svg","../../assets/images/présentation_project/alien.svg":"assets/images/présentation_project/alien.svg","../../assets/images/icons/logo.svg":"assets/images/icons/logo.svg"}],"js/projet/page__projet.js":[function(require,module,exports) {
+},{"../../assets/images/présentation_project/MontreConnecter1.svg":"assets/images/présentation_project/MontreConnecter1.svg","../../assets/images/présentation_project/logoSocomptoir.svg":"assets/images/présentation_project/logoSocomptoir.svg","../../assets/images/présentation_project/alien.svg":"assets/images/présentation_project/alien.svg","../../assets/images/icons/logo.svg":"assets/images/icons/logo.svg"}],"js/projet/page__projet.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -860,7 +860,13 @@ function () {
 }();
 
 exports.menuBurger = menuBurger;
-},{}],"js/app.js":[function(require,module,exports) {
+},{}],"assets/images/présentation_project/*.svg":[function(require,module,exports) {
+module.exports = {
+  "MontreConnecter1": require("./MontreConnecter1.svg"),
+  "alien": require("./alien.svg"),
+  "logoSocomptoir": require("./logoSocomptoir.svg")
+};
+},{"./MontreConnecter1.svg":"assets/images/présentation_project/MontreConnecter1.svg","./alien.svg":"assets/images/présentation_project/alien.svg","./logoSocomptoir.svg":"assets/images/présentation_project/logoSocomptoir.svg"}],"js/app.js":[function(require,module,exports) {
 "use strict";
 
 var _cursor = require("./function/cursor");
@@ -878,26 +884,29 @@ var _page__projet = require("./projet/page__projet");
 var _menuBurger = require("./function/menuBurger");
 
 //  préload Image 
-var images = new Array();
-
-function preload() {
-  for (var i = 0; i < 3; i++) {
-    images[i] = new Image();
-    images[i].src = preload[i];
-  }
-}
-
-preload('../../assets/images/présentation_project/MontreConnecter.1.svg', '../../assets/images/présentation_project/logoSocomptoir.svg', '../../assets/images/présentation_project/alien.svg');
 var srollPosition = new _scroll.SrollPosition(document.querySelector('.sroll__barre'));
 srollPosition.detectScroll();
 (0, _animation.animation)();
 (0, _page__projet.inTheProject)();
+
+var preload = require('../assets/images/présentation_project/*.svg'); // function preloader( Image ) {
+// var preloadLink = document.createElement("link");
+// preloadLink.rel = "preload";
+// preloadLink.as = "image";
+// preloadLink.href = "Image";
+// document.head.appendChild(preloadLink);
+// }
+// preloader( preload.alien );
+// preloader( preload.MontreConnecter1 )
+// preloader( preload.logoSocomptoir )
+
+
 new _menuBurger.menuBurger();
 var scene = document.getElementById('projects');
 var parallaxInstance = new Parallax(scene, {
   relativeInput: true
 });
-},{"./function/cursor":"js/function/cursor.js","./lib/viewPort":"js/lib/viewPort.js","./function/scroll":"js/function/scroll.js","./projet/projetMV":"js/projet/projetMV.js","./animation/animation":"js/animation/animation.js","./projet/page__projet":"js/projet/page__projet.js","./function/menuBurger":"js/function/menuBurger.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./function/cursor":"js/function/cursor.js","./lib/viewPort":"js/lib/viewPort.js","./function/scroll":"js/function/scroll.js","./projet/projetMV":"js/projet/projetMV.js","./animation/animation":"js/animation/animation.js","./projet/page__projet":"js/projet/page__projet.js","./function/menuBurger":"js/function/menuBurger.js","../assets/images/présentation_project/*.svg":"assets/images/présentation_project/*.svg"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -925,7 +934,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49192" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63291" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

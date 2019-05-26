@@ -54,7 +54,7 @@
       top: 10%;
       left: 60%;
       @media screen and ( width : 1900px){
-          -webkit-animation: rotation 4s infinite linear , sphereGoToCenter1080 10s ease-out forwards;
+          -webkit-animation: rotation 4s infinite linear , sphereGoToCenter1080 10s ease-out forwards ,  rotationCircle 1s infinite;
         }
       }
       .sphere{
@@ -63,7 +63,9 @@
         position: absolute;
         width: 450px;
         height: 450px;
-        animation: enlargement 3s  ;
+        animation: enlargement 10s cubic-bezier(.117,.167,.183,.167) 0s initial initial initial , 
+        rotationCircle 30s cubic-bezier(.17,.67,.83,.67) 0s initial initial initial , 
+        ;
       }
       .contact{
         margin-top: 5vh;

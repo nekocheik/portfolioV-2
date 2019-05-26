@@ -6,7 +6,7 @@ var projects = [
     numberProject : '1',
     subTitle : 'Projet : intégration',
     skills : ['xd' , 'JavaScript' , 'Rellax' , 'Html' , 'Sass'] ,
-    image : require('../../assets/images/présentation_project/MontreConnecter.1.svg'),
+    image : require('../../assets/images/présentation_project/MontreConnecter1.svg'),
     button : 'VISITER LE SITE' ,
     modifier : 'armani'
   },
