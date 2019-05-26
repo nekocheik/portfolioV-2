@@ -135,7 +135,7 @@ class SrollPosition  {
         if ( MemoPositionX <= this.positionX  ) {
           this.inversionPositionX();
         }
-      }, 1500)
+      }, 5800)
     }
 
     inversionPositionX(){

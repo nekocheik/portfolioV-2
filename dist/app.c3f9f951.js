@@ -736,7 +736,7 @@ function () {
         if (MemoPositionX <= _this4.positionX) {
           _this4.inversionPositionX();
         }
-      }, 1500);
+      }, 5800);
     }
   }, {
     key: "inversionPositionX",
@@ -1377,7 +1377,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50318" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52308" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
