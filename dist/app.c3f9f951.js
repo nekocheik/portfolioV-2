@@ -1256,6 +1256,8 @@ var _page__projet = require("../projet/page__projet");
 var _require = require('detect-browser'),
     detect = _require.detect;
 
+console.log(detect());
+
 var buttonProject = function buttonProject() {
   var precedent = document.querySelector('.button__precedent');
   var next = document.querySelector('.button__next');
@@ -1377,7 +1379,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52308" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52759" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

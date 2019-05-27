@@ -530,7 +530,8 @@ body {
 #home__page .projects .nav__project section {
   position: relative;
   display: flex;
-  bottom: 0;
+  bottom: 50px;
+  bottom: 3.125rem;
   overflow: hidden;
   z-index: -3;
 }
@@ -622,6 +623,8 @@ body {
 #in__the__project .the__project .title__of__project h1.so_comptoir {
   color: jaune;
   animation: blinkso_comptoir 3.5s infinite alternate;
+  font-size: 38px;
+  font-size: 2.375rem;
 }
 #in__the__project .the__project .title__of__project h1.space_invaders {
   animation: blinkInvaders 3.5s infinite alternate;
@@ -792,6 +795,11 @@ body {
     padding-top: 14vh;
   }
 }
+#home__page .buttons__next__precedent {
+  top: -50px;
+  top: -3.125rem;
+}
+
 @media screen and (min-width: 800px) {
   #in__the__project .the__project strong {
     font-weight: 900;

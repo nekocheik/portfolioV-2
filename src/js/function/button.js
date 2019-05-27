@@ -2,7 +2,7 @@ import { changeOfProject , numberProject } from '../projet/projetMV';
 import { inTheProject } from '../projet/page__projet';
 const { detect } = require('detect-browser');
 
-
+console.log(detect())
 
 let buttonProject = function(){
   let precedent = document.querySelector('.button__precedent');
