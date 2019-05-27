@@ -107,7 +107,6 @@ class SrollPosition  {
               this.positionX = -100 ;
               this.projectStyles.translateZ = 2024;
               
-              changeOfProject();
               
               TweenLite.to(".project", 0, 
               {css:{    

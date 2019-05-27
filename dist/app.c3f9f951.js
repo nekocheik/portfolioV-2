@@ -702,7 +702,6 @@ function () {
 
               _this3.positionX = -100;
               _this3.projectStyles.translateZ = 2024;
-              (0, _projetMV.changeOfProject)();
               TweenLite.to(".project", 0, {
                 css: {
                   transform: "translate3d( 0px , 0px , ".concat(_this3.projectStyles.translateZ, "px)")
@@ -1379,7 +1378,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52759" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57116" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
