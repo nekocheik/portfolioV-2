@@ -13,6 +13,9 @@
           font-weight: 900;
           padding-top: 280px;
           animation:  3.5s blinkArmani infinite alternate 2s ;
+          &.so_comptoir{
+            font-size: 90px;
+          }
         }h2{
           font-size: 20px;
           font-family: 'Avenir LT Std';

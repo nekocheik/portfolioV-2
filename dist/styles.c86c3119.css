@@ -817,6 +817,10 @@ body {
     padding-top: 17.5rem;
     animation: 3.5s blinkArmani infinite alternate 2s;
   }
+  #in__the__project .the__project .title__of__project h1.so_comptoir {
+    font-size: 90px;
+    font-size: 5.625rem;
+  }
   #in__the__project .the__project .title__of__project h2 {
     font-size: 20px;
     font-size: 1.25rem;
