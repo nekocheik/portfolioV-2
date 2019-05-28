@@ -11,7 +11,7 @@ let buttonProject = function(){
 
 
 const browser = detect();
-if ( browser.name === 'safari' && browser.os === 'Mac OS' ) {
+if ( browser.name === 'safari' && browser.os === 'Mac OS' || ( browser.name === 'firefox')  || ( browser.name === 'edge' ) ) {
   next.className = "button__next active";
   precedent.className = "button__precedent active";
 }

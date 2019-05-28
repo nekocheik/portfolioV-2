@@ -1262,7 +1262,7 @@ var buttonProject = function buttonProject() {
   var projects = document.querySelectorAll('.the__project');
   var browser = detect();
 
-  if (browser.name === 'safari' && browser.os === 'Mac OS') {
+  if (browser.name === 'safari' && browser.os === 'Mac OS' || browser.name === 'firefox' || browser.name === 'edge') {
     next.className = "button__next active";
     precedent.className = "button__precedent active";
   }
@@ -1377,7 +1377,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57116" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55801" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -792,7 +792,7 @@ body {
 }
 @media screen and (min-width: 800px) {
   #home__page .projects .nav__project {
-    padding-top: 14vh;
+    padding-top: 20vh;
   }
 }
 #home__page .buttons__next__precedent {
