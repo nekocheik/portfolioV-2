@@ -1,7 +1,5 @@
 class menuBurger {
-  
   constructor(){
-    // this.navMenu = document.querySelector('nav');
     this.button =  document.querySelector('.Menu__burger .croi');
     this.sections = document.querySelectorAll('.Menu__burger li');
     this.useMenu();
