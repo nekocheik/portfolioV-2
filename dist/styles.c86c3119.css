@@ -1065,7 +1065,7 @@ body {
 @media screen and (min-width: 800px) and (width: 1900px) {
   #about .container__sphere {
     -webkit-animation: rotation 4s infinite linear, sphereGoToCenter1080 10s ease-out forwards, rotationCircle 1s infinite;
-    left: 60%;
+    left: 64%;
   }
 }
 @media screen and (min-width: 800px) {
