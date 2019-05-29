@@ -729,6 +729,14 @@ body {
     transform-origin: center;
     animation: rotation 15s infinite;
   }
+}
+@media screen and (min-width: 800px) and (min-height: 900px) {
+  #home__page .all__svg .circlesWhite {
+    top: -200px;
+    top: -12.5rem;
+  }
+}
+@media screen and (min-width: 800px) {
   #home__page .container__sphere {
     height: 0px;
     height: 0;
