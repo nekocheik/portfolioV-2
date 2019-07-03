@@ -1,0 +1,25 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+:root {
+	--web-view-ids: Web_1366___1;
+}
+#Web_1366___1 * {
+	margin: 0;
+	padding: 0;
+}
+#Web_1366___1 {
+	position: absolute;
+	box-sizing: border-box;
+	background: #E5E5E5;
+	width: 1366;
+	height: 750;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	--web-view-name: Web 1366 – 1;
+	--web-view-id: Web_1366___1;
+	--web-enable-deep-linking: true;
+}

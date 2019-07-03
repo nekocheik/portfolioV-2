@@ -621,7 +621,7 @@ function () {
       this.element.style.transform = "translateX( ".concat(this.positionX, "vw)");
       this.detectSwipe();
       this.checkInversionPosition();
-      document.addEventListener("mousewheel", function (event) {
+      document.addEventListener("wheel", function (event) {
         if (!_this2.checkBottomPage() || _this2.waitTime.waite) {
           return;
         }
@@ -1377,7 +1377,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57463" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63356" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

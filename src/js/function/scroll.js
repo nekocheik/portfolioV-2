@@ -29,7 +29,7 @@ class SrollPosition  {
     this.detectSwipe();
     this.checkInversionPosition()
     
-    document.addEventListener("mousewheel", (event)=>{
+    document.addEventListener("wheel", (event)=>{
       if ( !this.checkBottomPage() || this.waitTime.waite  ) {
         return
       }
