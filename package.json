@@ -15,5 +15,7 @@
     "postcss-pxtorem": "^4.0.1",
     "sass": "^1.20.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "events-polyfill": "^2.1.2"
+  }
 }
