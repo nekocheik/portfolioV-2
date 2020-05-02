@@ -275,7 +275,7 @@ body {
   transform: translateY(10px);
   transform: translateY(0.625rem);
 }
-.Menu__burger li {
+.Menu__burger p {
   transition: font-size 0.3s, width 0.7s 0.4s;
   border: solid white 1px;
   border: solid white 0.0625rem;
@@ -295,7 +295,7 @@ body {
   margin: 0.3125rem 0 0.3125rem;
   transition: opacity 0.6s, font-size 0.5s, height 0.5s, width 0.5s 0.5s;
 }
-.Menu__burger li.active {
+.Menu__burger p.active {
   transition: all 0.5s 0.4s, font-size 0.5s 0.3s, width 0.5s;
   justify-items: center;
   border: solid white 1px;
@@ -329,13 +329,13 @@ body {
   .Menu__burger nav img.active {
     display: none;
   }
-  .Menu__burger ul {
+  .Menu__burger div {
     display: flex;
     width: 350px;
     width: 21.875rem;
     justify-content: space-between;
   }
-  .Menu__burger ul li {
+  .Menu__burger div p {
     border: none;
     color: white;
     background-color: initial;
@@ -347,7 +347,7 @@ body {
     margin: initial;
     font-weight: 100;
   }
-  .Menu__burger ul li.active {
+  .Menu__burger div p.active {
     transition: all 0.5s 0.4s, font-size 0.5s 0.3s, width 0.5s;
     justify-items: center;
     border: none;

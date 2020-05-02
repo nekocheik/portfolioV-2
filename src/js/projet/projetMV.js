@@ -18,7 +18,6 @@ function renderChangeOfProject(value) {
     
   if (value || value === 0 ) {
     numberProject = value ;
-    console.log('is true')
   }
 
   if ( numberProject > projects.length - 1) {

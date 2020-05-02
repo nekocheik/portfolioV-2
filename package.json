@@ -5,15 +5,15 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/*.html src/robots.txt src/sitemap.xml src/pictures/haris.jpg"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "detect-browser": "^4.5.0",
-    "parcel": "^1.12.3",
+    "detect-browser": "^4.8.0",
+    "parcel": "^1.12.4",
     "postcss-pxtorem": "^4.0.1",
-    "sass": "^1.20.1"
+    "sass": "^1.26.5"
   },
   "dependencies": {
     "events-polyfill": "^2.1.2"

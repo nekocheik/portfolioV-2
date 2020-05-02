@@ -131,9 +131,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var ViewPort =
-/*#__PURE__*/
-function () {
+var ViewPort = /*#__PURE__*/function () {
   function ViewPort(element) {
     var elementPartTouch = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'top';
     var bodyPartTouch = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'bottom';
@@ -229,9 +227,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var givPotionPointer =
-/*#__PURE__*/
-function () {
+var givPotionPointer = /*#__PURE__*/function () {
   function givPotionPointer(element, child) {
     _classCallCheck(this, givPotionPointer);
 
@@ -585,9 +581,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var SrollPosition =
-/*#__PURE__*/
-function () {
+var SrollPosition = /*#__PURE__*/function () {
   function SrollPosition(element) {
     _classCallCheck(this, SrollPosition);
 
@@ -821,14 +815,12 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var menuBurger =
-/*#__PURE__*/
-function () {
+var menuBurger = /*#__PURE__*/function () {
   function menuBurger() {
     _classCallCheck(this, menuBurger);
 
     this.button = document.querySelector('.Menu__burger .croi');
-    this.sections = document.querySelectorAll('.Menu__burger li');
+    this.sections = document.querySelectorAll('.Menu__burger div');
     this.useMenu();
   }
 
@@ -837,11 +829,8 @@ function () {
     value: function useMenu() {
       var _this = this;
 
-      console.log(this.button);
       var d = document.querySelector('body');
       this.button.addEventListener('click', function (e) {
-        console.log(_this.button);
-
         _this.sections.forEach(function (section) {
           section.classList.toggle('active');
         });
@@ -1082,6 +1071,13 @@ process.umask = function () {
 },{}],"../node_modules/detect-browser/index.js":[function(require,module,exports) {
 var process = require("process");
 "use strict";
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var BrowserInfo = /** @class */ (function () {
     function BrowserInfo(name, version, os) {
@@ -1118,6 +1114,7 @@ var REQUIRED_VERSION_PARTS = 3;
 var userAgentRules = [
     ['aol', /AOLShield\/([0-9\._]+)/],
     ['edge', /Edge\/([0-9\._]+)/],
+    ['edge-ios', /EdgiOS\/([0-9\._]+)/],
     ['yandexbrowser', /YaBrowser\/([0-9\._]+)/],
     ['vivaldi', /Vivaldi\/([0-9\.]+)/],
     ['kakaotalk', /KAKAOTALK\s([0-9\.]+)/],
@@ -1126,6 +1123,10 @@ var userAgentRules = [
     ['miui', /MiuiBrowser\/([0-9\.]+)$/],
     ['beaker', /BeakerBrowser\/([0-9\.]+)/],
     ['edge-chromium', /Edg\/([0-9\.]+)/],
+    [
+        'chromium-webview',
+        /(?!Chrom.*OPR)wv\).*Chrom(?:e|ium)\/([0-9\.]+)(:?\s|$)/,
+    ],
     ['chrome', /(?!Chrom.*OPR)Chrom(?:e|ium)\/([0-9\.]+)(:?\s|$)/],
     ['phantomjs', /PhantomJS\/([0-9\.]+)(:?\s|$)/],
     ['crios', /CriOS\/([0-9\.]+)(:?\s|$)/],
@@ -1175,7 +1176,10 @@ var operatingSystemRules = [
     ['OS/2', /OS\/2/],
     ['Search Bot', SEARCHBOT_OS_REGEX],
 ];
-function detect() {
+function detect(userAgent) {
+    if (!!userAgent) {
+        return parseUserAgent(userAgent);
+    }
     if (typeof navigator !== 'undefined') {
         return parseUserAgent(navigator.userAgent);
     }
@@ -1206,7 +1210,7 @@ function parseUserAgent(ua) {
     var versionParts = match[1] && match[1].split(/[._]/).slice(0, 3);
     if (versionParts) {
         if (versionParts.length < REQUIRED_VERSION_PARTS) {
-            versionParts = versionParts.concat(createVersionParts(REQUIRED_VERSION_PARTS - versionParts.length));
+            versionParts = __spreadArrays(versionParts, createVersionParts(REQUIRED_VERSION_PARTS - versionParts.length));
         }
     }
     else {
@@ -1377,7 +1381,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57412" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59402" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -1408,8 +1412,9 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
         assetsToAccept.forEach(function (v) {
           hmrAcceptRun(v[0], v[1]);
         });
-      } else {
-        window.location.reload();
+      } else if (location.reload) {
+        // `location` global exists in a web worker context but lacks `.reload()` function.
+        location.reload();
       }
     }
 

@@ -131,9 +131,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var ViewPort =
-/*#__PURE__*/
-function () {
+var ViewPort = /*#__PURE__*/function () {
   function ViewPort(element) {
     var elementPartTouch = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'top';
     var bodyPartTouch = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'bottom';
@@ -229,9 +227,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var givPotionPointer =
-/*#__PURE__*/
-function () {
+var givPotionPointer = /*#__PURE__*/function () {
   function givPotionPointer(element, child) {
     _classCallCheck(this, givPotionPointer);
 
@@ -342,14 +338,12 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var menuBurger =
-/*#__PURE__*/
-function () {
+var menuBurger = /*#__PURE__*/function () {
   function menuBurger() {
     _classCallCheck(this, menuBurger);
 
     this.button = document.querySelector('.Menu__burger .croi');
-    this.sections = document.querySelectorAll('.Menu__burger li');
+    this.sections = document.querySelectorAll('.Menu__burger div');
     this.useMenu();
   }
 
@@ -358,11 +352,8 @@ function () {
     value: function useMenu() {
       var _this = this;
 
-      console.log(this.button);
       var d = document.querySelector('body');
       this.button.addEventListener('click', function (e) {
-        console.log(_this.button);
-
         _this.sections.forEach(function (section) {
           section.classList.toggle('active');
         });
@@ -427,7 +418,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57412" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59402" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -458,8 +449,9 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
         assetsToAccept.forEach(function (v) {
           hmrAcceptRun(v[0], v[1]);
         });
-      } else {
-        window.location.reload();
+      } else if (location.reload) {
+        // `location` global exists in a web worker context but lacks `.reload()` function.
+        location.reload();
       }
     }
 
