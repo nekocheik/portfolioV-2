@@ -21,7 +21,7 @@
       }
     }
   }
-  li{
+  p{
     transition: font-size 0.3s , width 0.7s 0.4s  ;
     border: solid rgb(255, 255, 255) 1px;
     color: rgba(255, 255, 255, 0);
@@ -65,11 +65,11 @@
         }
       }
     }
-    ul{
+    div {
       display: flex;
       width: 350px;
       justify-content: space-between;
-      li{
+      p{
         border: none;
         color: white;
         background-color: initial;

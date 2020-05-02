@@ -1,0 +1,3 @@
+Allow: index.html
+Allow: pages/about.html
+Disallow: /src/assets/*.png

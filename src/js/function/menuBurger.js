@@ -1,15 +1,13 @@
 class menuBurger {
   constructor(){
     this.button =  document.querySelector('.Menu__burger .croi');
-    this.sections = document.querySelectorAll('.Menu__burger li');
+    this.sections = document.querySelectorAll('.Menu__burger div');
     this.useMenu();
   }
   
   useMenu(){
-    console.log(this.button)
     let d = document.querySelector('body')
     this.button.addEventListener( 'click', (e)=>{
-      console.log(  this.button )
       this.sections.forEach( section  => { section.classList.toggle('active') });
       this.button.classList.toggle('active')
     });
